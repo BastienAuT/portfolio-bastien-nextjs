@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  background-color: #1e1f25;
+  padding: 2rem;
+
+}
+
+.links {
+  color: #a0a3af;
+  font-size: 80px;
+}
+
+.links:hover{
+    text-decoration: none;
+      filter: blur(0);
+      -webkit-transition: 0.3s ease-in-out;
+      transition: 0.3s ease-in-out;
+      -webkit-transform: scale(1);
+      transform: scale(1.2);
+      color: #f9004d;
+}
