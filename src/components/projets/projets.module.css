@@ -49,10 +49,10 @@
   color: rgb(255, 0, 0);
   padding: 0.3rem;
   border-radius: 10%;
-  border: 10px solid;
-  border-image-slice: 1;
+  border: 1px solid;
+  /* border-image-slice: 1;
   border-width: 2px;
-  border-image-source: linear-gradient(to left, #5d00fe, #d53a9d);
+  border-image-source: linear-gradient(to left, #5d00fe, #d53a9d); */
   margin-bottom: 0.5rem;
   
 }
