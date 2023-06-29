@@ -5,20 +5,13 @@ import Image from "next/image";
 
 const handleDownload = async () => {
   try {
-    const response = await fetch(
-      "https://files.smallpdf.com/files/6e58219d1a9f717b2b056f1e542fc2b3.pdf?name=CVBASTIEN2023.pdf"
-    );
-    const blob = await response.blob();
-    const url = URL.createObjectURL(blob);
-
+    const url = "/CVBASTIEN2023.pdf";
     const link = document.createElement("a");
     link.href = url;
     link.download = "cvBastien.pdf";
     link.click();
-
-    URL.revokeObjectURL(url);
   } catch (error) {
-    console.error("Error downloading image:", error);
+    console.error("Error downloading PDF:", error);
   }
 };
 

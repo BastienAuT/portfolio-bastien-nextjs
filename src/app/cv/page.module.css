@@ -6,7 +6,8 @@
 }
 
 .img {
-  max-width: 90%;
+
+  display: flex;
   margin: auto;
   margin-bottom: 3rem;
   border-radius: 5%;
