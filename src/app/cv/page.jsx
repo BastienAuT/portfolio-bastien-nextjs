@@ -25,8 +25,9 @@ const Cv = () => {
         src="/CVBASTIEN2023.jpg"
         className={styles.img}
         alt="cv bastien"
-        height={1600}
-        width={1300}
+        height={600}
+        width={300}
+        
       />
     </div>
   );

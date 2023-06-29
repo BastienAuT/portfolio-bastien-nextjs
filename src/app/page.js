@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./page.module.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
