@@ -43,7 +43,6 @@
     border-bottom-left-radius: 5%;
     font-size: 1.5rem;
     font-weight: bolder;
-
   }
 
   .button {
@@ -55,7 +54,7 @@
     border-radius: 10%;
     border-style: solid;
     border-width: 2px;
-    border-image: linear-gradient(to right, #5d00fe, #d53a9d) 1;
+    border-image: linear-gradient(to top, #5d00fe, #d53a9c) 1;
     margin-bottom: 1rem;
   }
 
@@ -64,9 +63,9 @@
   }
 
   .desc {
-    font-size: 0.8rem;
-    margin-left: 0.4rem;
-    margin-right: 0.4rem;
+    font-size: 0.9rem;
+    margin-left: 1.4rem;
+    margin-right: 1.4rem;
     height: 80px;
   }
 
