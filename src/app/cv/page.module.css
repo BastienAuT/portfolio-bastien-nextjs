@@ -14,8 +14,8 @@
     margin-bottom: 2rem;
     border-radius: 3%;
     border: 1px solid rgba(128, 128, 128, 0.192);
-    height: 1800px;
-    width: 1700px;
+    max-height: 1920px;
+    max-width: 1080px;
   }
 
   .button {
@@ -31,16 +31,18 @@
     font-weight: bold;
     margin: auto;
   
+  }
 
-  @media screen and (max-width: 768px) {
-    .container {
+@media screen and (min-width: 700px) and (max-width: 1024px) {
+    
+  .container {
       flex-direction: column;
       margin-bottom: 50px;
     }
 
     .img {
       height: 900px;
-      width: 550px;
+      width: 600px;
     }
 
     .button {
@@ -52,18 +54,17 @@
     }
 
   }
-}
 
-@media screen and (max-width: 320px) {
+@media screen and (min-width: 320px) and (max-width: 699px) {
+  
   .container {
-    flex-direction: column;
     margin-bottom: 50px;
   }
 
-  .img {
-    height: 580px;
-    width: 280px;
-  }
+        .img {
+          height: 620px;
+          width: 300px;
+        }
 
   .button {
     font-size: 0.7rem;

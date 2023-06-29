@@ -7,8 +7,6 @@ import { BiLogoLinkedin, BiLogoTwitter, BiSolidEnvelope } from "react-icons/bi";
 const Footer = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.sizes}>
-
       <Link href="https://twitter.com/Dehcimal" className={styles.links}>
         <span>
           <BiLogoTwitter />
@@ -28,7 +26,6 @@ const Footer = () => {
         </span>
       </Link>
         </div>
-    </div>
   );
 };
 
