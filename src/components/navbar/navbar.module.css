@@ -1,45 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-.container {
-  display: flex;
-  justify-content: flex-end;
-  gap: 30px;
-  color: #6e6e6e;
-  font-weight: bolder;
-  margin-bottom: 80px;
-}
 
-.links {
-  margin-right: 20px;
-  display: flex;
-  font-size: 50px;
-}
+  .container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    color: #6e6e6e;
+    font-weight: bolder;
+    margin-bottom: 80px;
+  }
 
-.links:hover {
-  text-decoration: none;
-  filter: blur(0);
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-  -webkit-transform: scale(1);
-  transform: scale(1.2);
-  color: #f9004d;
-}
+  .links {
+    margin-right: 20px;
+    display: flex;
+    font-size: 50px;
+  }
+
+  .links:hover {
+    text-decoration: none;
+    filter: blur(0);
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    -webkit-transform: scale(1);
+    transform: scale(1.2);
+    color: #f9004d;
+  }
+
 
 @media screen and (max-width: 700px) {}
 
-@media screen and (min-width: 320px) {
+@media screen and (max-width: 320px) {
 
   .container {
     justify-content: center;
     margin-bottom: 3rem;
     border-bottom-left-radius: 30%;
-    gap:10px;
+    gap: 10px;
   }
 
-  .links{
+  .links {
     font-size: 1rem;
-    margin-right:0;
-    margin:auto;
+    margin-right: 0;
+    margin: auto;
 
   }
 }

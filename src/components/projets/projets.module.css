@@ -1,126 +1,128 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-.container {
-  font-family: "nunito";
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
 
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 18rem;
-  margin: 5rem;
-  box-shadow: 1px 1px 30px 7px #00000094;
-  border-style: solid;
-  border-width: 8px;
-  border-image: linear-gradient(to right, #5d00fe, #d53a9d) 1;
-  border-left: none;
-  border-right: none;
-  -webkit-transition: 0.4s ease-in-out;
-  transition: 0.4s ease-in-out;
-  -webkit-transform: scale(1);
-  transform: scale(1);
-  /* Adjust the radius as needed */
-}
+  .container {
+    font-family: "nunito";
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-.image {
-  object-fit: contain;
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 18rem;
+    margin: 5rem;
+    box-shadow: 1px 1px 30px 7px #00000094;
+    border-style: solid;
+    border-width: 8px;
+    border-image: linear-gradient(to right, #5d00fe, #d53a9d) 1;
+    border-left: none;
+    border-right: none;
+    -webkit-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    /* Adjust the radius as needed */
+  }
 
-}
+  .image {
+    object-fit: contain;
 
-.card:hover {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
+  }
 
-.title {
-  list-style: none;
-  border-bottom-right-radius: 15%;
-  border-bottom-left-radius: 5%;
-  font-size: 1.5rem;
-  font-weight: bolder;
+  .card:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
 
-}
+  .title {
+    list-style: none;
+    border-bottom-right-radius: 15%;
+    border-bottom-left-radius: 5%;
+    font-size: 1.5rem;
+    font-weight: bolder;
 
-.button {
-  align-items: center;
-  list-style: none;
-  font-weight: bold;
-  color: rgb(255, 0, 0);
-  padding: 0.3rem;
-  border-radius: 10%;
-  border-style: solid;
-  border-width: 2px;
-  border-image: linear-gradient(to right, #5d00fe, #d53a9d) 1;
-  margin-bottom: 1rem;
-}
+  }
 
-.button:hover {
-  background-color: #00e5f562;
-}
+  .button {
+    align-items: center;
+    list-style: none;
+    font-weight: bold;
+    color: rgb(255, 0, 0);
+    padding: 0.3rem;
+    border-radius: 10%;
+    border-style: solid;
+    border-width: 2px;
+    border-image: linear-gradient(to right, #5d00fe, #d53a9d) 1;
+    margin-bottom: 1rem;
+  }
 
-.desc {
-  font-size: 0.8rem;
-  margin-left: 0.4rem;
-  margin-right: 0.4rem;
-  height: 80px;
-}
+  .button:hover {
+    background-color: #00e5f562;
+  }
 
-.span {
-  list-style: none;
-  font-weight: bold;
-  color: white;
-  margin-left: 2rem;
-  margin-right: 2rem;
-  text-align: center;
-}
+  .desc {
+    font-size: 0.8rem;
+    margin-left: 0.4rem;
+    margin-right: 0.4rem;
+    height: 80px;
+  }
 
-.a:link {
-  text-decoration: none;
-  font-size: 1.3rem;
-}
+  .span {
+    list-style: none;
+    font-weight: bold;
+    color: white;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    text-align: center;
+  }
+
+  .a:link {
+    text-decoration: none;
+    font-size: 1.3rem;
+  }
+
 
 
 @media screen and (max-width: 768px) {
   .card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 12rem;
-      margin: 5rem;
-      box-shadow: 1px 1px 30px 7px #00000094;
-  
-    }
-  
-    .image {
-      width: 100%;
-      height: 50%;
-    }
-  
-    .title {
-      font-size: 1rem;
-    }
-  
-    .button {
-      padding: 0.1rem;
-      font-size: 0.8rem;
-      margin-bottom: 0.5rem;
-    }
-  
-    .desc {
-      font-size: 0.6rem;
-      margin-left: 0.4rem;
-      margin-right: 0.4rem;
-      height: 80px;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 12rem;
+    margin: 5rem;
+    box-shadow: 1px 1px 30px 7px #00000094;
+
+  }
+
+  .image {
+    width: 100%;
+    height: 50%;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .button {
+    padding: 0.1rem;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .desc {
+    font-size: 0.6rem;
+    margin-left: 0.4rem;
+    margin-right: 0.4rem;
+    height: 80px;
+  }
 }
 
 
 
-@media screen and (min-width: 320px) {
+@media screen and (max-width: 320px) {
 
   .card {
     display: flex;
