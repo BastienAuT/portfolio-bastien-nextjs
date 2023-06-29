@@ -43,6 +43,8 @@
     border-bottom-left-radius: 5%;
     font-size: 1.5rem;
     font-weight: bolder;
+ 
+
   }
 
   .button {
@@ -67,6 +69,7 @@
     margin-left: 1.4rem;
     margin-right: 1.4rem;
     height: 80px;
+    margin-top: 0.2rem;
   }
 
   .span {
