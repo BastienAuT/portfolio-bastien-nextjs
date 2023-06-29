@@ -22,11 +22,11 @@ const Cv = () => {
         DOWNLOAD
       </button>
       <Image
-        src="/CVBASTIEN2023.jpg"
+        src="/CVBASTIEN2023.png"
         className={styles.img}
         alt="cv bastien"
-        height={600}
-        width={300}
+        height={1600}
+        width={1300}
         
       />
     </div>
