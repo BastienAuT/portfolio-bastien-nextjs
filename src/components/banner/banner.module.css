@@ -16,7 +16,6 @@
   }
 
   .text {
-    font-family: 'Bebas Neue', sans-serif;
     font-size: 4rem;
     text-align: center;
     color: #6e6e6e;
@@ -32,7 +31,7 @@
   }
 
 
-@media screen and (min-width) and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   .container {
     padding: 10px;
     align-items: center;
@@ -46,12 +45,12 @@
   }
 
   .text {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.8rem;
+
+    font-size: 5rem;
     text-align: center;
     color: #6e6e6e;
     font-weight: bold;
-    margin-right: 2.3rem;
+    margin-right: 2rem;
   }
 
   .typeit {
@@ -62,7 +61,7 @@
 }
 
 
-@media screen and (min-width:320px) and (max-width: 320px) {
+@media screen and (min-width: 320px) {
 
   .container {
     justify-content: space-evenly;
@@ -72,8 +71,6 @@
 
   .img {
     margin-left: 1rem;
-    border-top-left-radius: 25%;
-    border-bottom-right-radius: 25%;
     max-width: 40%;
     height: 30%;
   }
@@ -81,11 +78,9 @@
   .text {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 0.8rem;
-    text-align: center;
-    color: #6e6e6e;
     margin-left: 1rem;
     margin-right: 2rem;
-    font-weight: bold;
+
   }
 
   .typeit {

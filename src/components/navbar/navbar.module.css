@@ -1,44 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 
-  .container {
-    display: flex;
-    justify-content: flex-end;
-    gap: 30px;
-    color: #6e6e6e;
-    font-weight: bolder;
-    margin-bottom: 80px;
-  }
+.container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+  color: #6e6e6e;
+  font-weight: bolder;
+  margin-bottom: 80px;
 
-  .links {
-    margin-right: 20px;
-    display: flex;
-    font-size: 50px;
-  }
+}
 
-  .links:hover {
-    text-decoration: none;
-    filter: blur(0);
-    -webkit-transition: 0.3s ease-in-out;
-    transition: 0.3s ease-in-out;
-    -webkit-transform: scale(1);
-    transform: scale(1.2);
-    color: #f9004d;
-  }
+.links {
+  margin-right: 20px;
+  display: flex;
+  font-size: 50px;
+}
 
+.links:hover {
+  text-decoration: none;
+  filter: blur(0);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  -webkit-transform: scale(1);
+  transform: scale(1.2);
+  color: #f9004d;
+}
 
-@media screen and (min-width) and (max-width: 768px) {}
-
-@media screen and (min-width:320px) and (max-width: 320px) {
+@media screen and (min-width:700px) and (max-width: 1024px) {
 
   .container {
     justify-content: center;
-    margin-bottom: 3rem;
-    border-bottom-left-radius: 30%;
-    gap: 10px;
   }
 
+
   .links {
+    justify-content: start;
+    font-size: 1rem;
+    margin-right: 0;
+    margin: auto;
+
+  }
+}
+
+@media screen and (min-width:320px) and (max-width: 699px) {
+
+  .container {
+    flex-direction: row-reverse;
+    justify-content: start;
+  }
+
+
+  .links {
+    justify-content: start;
     font-size: 1rem;
     margin-right: 0;
     margin: auto;

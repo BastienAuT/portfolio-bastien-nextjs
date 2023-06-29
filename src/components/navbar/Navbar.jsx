@@ -1,7 +1,7 @@
-import React from 'react'
-import styles from "./navbar.module.css"
-import Link from 'next/link'
-import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
+import React from "react";
+import styles from "./navbar.module.css";
+import Link from "next/link";
+import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 
 const Navbar = () => {
   return (
@@ -21,6 +21,6 @@ const Navbar = () => {
       </Link>
     </div>
   );
-}
+};
 
-export default Navbar
+export default Navbar;

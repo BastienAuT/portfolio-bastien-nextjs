@@ -8,11 +8,14 @@ config.autoAddCss = false;
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <Banner />
-        <Projets/>
-      </div>
-    </main>
+    <>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <main className={styles.main}>
+        <div className={styles.description}>
+          <Banner />
+          <Projets />
+        </div>
+      </main>
+    </>
   );
 }
