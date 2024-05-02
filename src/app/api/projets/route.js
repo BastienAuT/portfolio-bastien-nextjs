@@ -10,7 +10,7 @@ export const GET = async (request) => {
 
     const projets = await Projets.find();
 
-    console.log(projets);
+    // console.log(projets);
 
     return new NextResponse(JSON.stringify(projets), { status: 200 });
   } catch (err) {

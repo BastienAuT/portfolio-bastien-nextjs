@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const handleDownload = async () => {
   try {
-    const url = "/CVBASTIEN2023.pdf";
+    const url = "/CVBASTIEN2024.pdf";
     const link = document.createElement("a");
     link.href = url;
     link.download = "cvBastien.pdf";
@@ -22,7 +22,7 @@ const Cv = () => {
         DOWNLOAD
       </button>
       <Image
-        src="/CVBASTIEN2023.png"
+        src="/CVBASTIEN2024.png"
         className={styles.img}
         alt="cv bastien"
         height={1600}

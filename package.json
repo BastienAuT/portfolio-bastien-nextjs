@@ -31,5 +31,6 @@
     "react-loader-spinner": "^5.3.4",
     "react-pdf": "^7.1.2",
     "typeit-react": "^2.6.4"
-  }
+  },
+  "packageManager": "yarn@4.1.1"
 }
