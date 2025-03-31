@@ -12,7 +12,6 @@
   text-align: center;
   color: #6e6e6e;
   font-size: 2rem;
-
 }
 
   .card {
@@ -127,6 +126,11 @@
     margin-right: 0.4rem;
     height: 80px;
   }
+
+    .projects {
+    
+      font-size: 0.6rem;
+    }
 }
 
 

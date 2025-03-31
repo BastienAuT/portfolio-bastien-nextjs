@@ -4,6 +4,7 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import Banner from "../components/banner/Banner";
 import Projets from "../components/projets/Projets";
+import ProjetsPro from "../components/projetspro/ProjetsPro";
 config.autoAddCss = false;
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.description}>
           <Banner />
+          <ProjetsPro/>
           <Projets />
         </div>
       </main>
