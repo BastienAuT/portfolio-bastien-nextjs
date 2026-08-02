@@ -8,7 +8,7 @@ export const GET = async (request) => {
     await connect();
 
     // Fetch data from both collections
-    const projets = await Projets.find();
+    const projets = await Projets.find().sort({ createdAt: -1 });
     // Return them separately in the response
     return new NextResponse(
       JSON.stringify({

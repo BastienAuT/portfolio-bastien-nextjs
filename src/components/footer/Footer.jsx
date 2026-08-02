@@ -1,31 +1,55 @@
-import React from "react";
-import styles from "./footer.module.css";
-import Link from "next/link";
-
-import { BiLogoLinkedin, BiLogoTwitter, BiSolidEnvelope } from "react-icons/bi";
-
 const Footer = () => {
   return (
-    <div className={styles.container}>
-      <Link href="https://twitter.com/Dehcimal" className={styles.links}>
-        <span>
-          <BiLogoTwitter />
-        </span>
-      </Link>
-      <Link
-        href="https://www.linkedin.com/feed/update/urn:li:activity:6855897129152602112/"
-        className={styles.links}
-        >
-        <span>
-          <BiLogoLinkedin />
-        </span>
-      </Link>
-      <Link href="mailto:deh2win@gmail.com" className={styles.links}>
-        <span>
-          <BiSolidEnvelope />
-        </span>
-      </Link>
+    <footer className="bg-[#111411] text-[#edf0e8]" id="contact">
+      <div className="mx-auto w-[min(1160px,calc(100%-48px))] py-16 max-sm:w-[calc(100%-28px)]">
+        <p className="text-xs font-extrabold text-[#4f86ff] uppercase tracking-[0.12em]">
+          Contact
+        </p>
+
+        <div className="mt-8 flex items-end justify-between gap-8 border-b border-white/20 pb-10 max-sm:flex-col max-sm:items-start">
+          <p className="max-w-[650px] text-[clamp(1.65rem,2.7vw,2.5rem)] leading-[1.08] font-bold tracking-[-0.04em]">
+            Pour une mission, une opportunité ou un projet.
+          </p>
+          <a
+            className="group flex shrink-0 items-center gap-4 bg-[#246bfe] px-5 py-4 text-sm font-extrabold text-white transition-colors hover:bg-[#4f86ff]"
+            href="mailto:deh2win@gmail.com"
+          >
+            M’écrire par e-mail
+            <span
+              className="text-lg transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              aria-hidden="true"
+            >
+              ↗
+            </span>
+          </a>
         </div>
+
+        <div className="mt-6 flex items-center justify-between gap-6 text-xs text-[#a9aea5] max-sm:flex-col max-sm:items-start">
+          <p>© {new Date().getFullYear()} Bastien Autem</p>
+          <div className="flex gap-6 font-bold text-[#edf0e8]">
+            <a
+              className="hover:text-[#4f86ff]"
+              href="https://github.com/BastienAuT"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub ↗
+            </a>
+            <a
+              className="hover:text-[#4f86ff]"
+              href="https://www.linkedin.com/in/bastien-autem/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn ↗
+            </a>
+            <a className="hover:text-[#4f86ff]" href="/cv">
+              CV ↓
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 };
 

@@ -5,7 +5,7 @@ import ProjetsPro from "@/src/models/ProjetsPro";
 export const GET = async (request) => {
   try {
     await connect();
-    const projetspro = await ProjetsPro.find();
+    const projetspro = await ProjetsPro.find().sort({ createdAt: -1 });
     return new NextResponse(
       JSON.stringify({
         projetspro,
@@ -14,12 +14,14 @@ export const GET = async (request) => {
     );
   } catch (err) {
     console.error("Database Error:", err);
-   return new NextResponse(JSON.stringify({ projetspro }), {
-     status: 200,
-     headers: {
-       "Content-Type": "application/json",
-       "Access-Control-Allow-Origin": "*", // Autoriser toutes les origines pour le test
-     },
-   });
+    return new NextResponse(
+      JSON.stringify({ projetspro: [], error: "Database Error" }),
+      {
+        status: 500,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
   }
 };
