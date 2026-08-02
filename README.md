@@ -5,13 +5,15 @@ Portfolio développé avec Next.js, React, Tailwind CSS et Bun.
 ## Prérequis
 
 - Bun 1.3.14 ou plus récent
-- Node.js 20.9 ou plus récent pour la compatibilité Next.js
+- Node.js 24.x
 
 ## Installation
 
 ```bash
 bun install
 ```
+
+Copier ensuite `.env.example` vers `.env` et renseigner la connexion MongoDB.
 
 ## Développement
 
