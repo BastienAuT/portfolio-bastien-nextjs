@@ -10,10 +10,26 @@ const Navbar = () => {
       >
         <Link
           href="/"
-          className="inline-flex items-center gap-1.5 text-xl font-black tracking-[-0.08em]"
+          className="group inline-flex items-center gap-2.5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#246bfe]"
           aria-label="Bastien Autem — Accueil"
         >
-          BA <span className="text-[#1557e8] dark:text-[#4f86ff]">—</span>
+          <span
+            className="inline-flex font-[var(--font-space-grotesk)] text-[1.35rem] leading-none font-black tracking-[-0.13em]"
+            aria-hidden="true"
+          >
+            <span className="inline-block transition-transform duration-300 ease-out group-hover:-translate-x-px group-focus-visible:-translate-x-px motion-reduce:transform-none motion-reduce:transition-none">
+              B
+            </span>
+            <span className="inline-block text-[#1557e8] transition-transform duration-300 ease-out group-hover:translate-x-px group-focus-visible:translate-x-px motion-reduce:transform-none motion-reduce:transition-none dark:text-[#4f86ff]">
+              A
+            </span>
+          </span>
+          <span
+            className="relative h-px w-8 overflow-hidden bg-[#111411]/20 dark:bg-white/25"
+            aria-hidden="true"
+          >
+            <span className="absolute inset-y-0 left-0 w-2 bg-[#1557e8] transition-[width] duration-500 ease-out group-hover:w-full group-focus-visible:w-full motion-reduce:transition-none dark:bg-[#4f86ff]" />
+          </span>
         </Link>
 
         <div className="flex items-center gap-[clamp(18px,3vw,38px)] text-xs font-bold text-[#5c6059] dark:text-[#a9aea5]">

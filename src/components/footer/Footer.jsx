@@ -33,7 +33,7 @@ const Footer = () => {
               target="_blank"
               rel="noreferrer"
             >
-              GitHub ↗
+              GitHub
             </a>
             <a
               className="hover:text-[#4f86ff]"
@@ -41,7 +41,7 @@ const Footer = () => {
               target="_blank"
               rel="noreferrer"
             >
-              LinkedIn ↗
+              LinkedIn
             </a>
             <a className="hover:text-[#4f86ff]" href="/cv">
               CV ↓

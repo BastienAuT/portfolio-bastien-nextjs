@@ -21,31 +21,36 @@ const Banner = () => {
             Je conçois et développe des produits web rapides, robustes et
             agréables à utiliser avec React et Next.js.
           </p>
-          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-4">
+          <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-4">
             <a
-              className="group inline-flex min-h-11 items-center gap-3 bg-[#246bfe] px-5 py-3 text-sm font-extrabold text-white transition-colors hover:bg-[#1557e8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#246bfe] dark:hover:bg-[#4f86ff]"
+              className="inline-flex min-h-11 items-center bg-[#246bfe] px-5 py-3 text-sm font-extrabold text-white transition-colors hover:bg-[#1557e8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#246bfe] dark:hover:bg-[#4f86ff]"
               href="mailto:deh2win@gmail.com"
             >
               Me contacter
-              <span
-                className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                aria-hidden="true"
-              >
-                ↗
-              </span>
             </a>
-            <a
-              className="group inline-flex min-h-11 items-center gap-3 text-sm font-black text-[#1557e8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#246bfe] dark:text-[#4f86ff]"
-              href="#projets"
+            <nav
+              className="flex items-center gap-2 border-l border-[#111411]/20 pl-4 max-sm:border-l-0 max-sm:pl-0 dark:border-white/20"
+              aria-label="Profils professionnels"
             >
-              Voir les projets
-              <span
-                className="transition-transform group-hover:translate-y-1"
-                aria-hidden="true"
+              <a
+                className="inline-flex min-h-11 items-center border border-[#111411]/20 px-3.5 text-sm font-extrabold text-[#111411] transition-colors hover:border-[#246bfe] hover:text-[#1557e8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#246bfe] dark:border-white/20 dark:text-white dark:hover:text-[#4f86ff]"
+                href="https://www.linkedin.com/in/bastien-autem/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Consulter mon profil LinkedIn dans un nouvel onglet"
               >
-                ↓
-              </span>
-            </a>
+                LinkedIn
+              </a>
+              <a
+                className="inline-flex min-h-11 items-center border border-[#111411]/20 px-3.5 text-sm font-extrabold text-[#111411] transition-colors hover:border-[#246bfe] hover:text-[#1557e8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#246bfe] dark:border-white/20 dark:text-white dark:hover:text-[#4f86ff]"
+                href="https://github.com/BastienAuT"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Consulter mon profil GitHub dans un nouvel onglet"
+              >
+                GitHub
+              </a>
+            </nav>
           </div>
         </div>
       </div>
