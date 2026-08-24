@@ -5,7 +5,7 @@ export const projects = [
     kind: "personal",
     kindLabel: "Projet personnel",
     category: "Communication · Temps réel",
-    cover: "/projects/cyclone-poster.webp",
+    cover: "/projects/cyclone-featured-v2.webp",
     demoUrl: "https://cyclone-smoky.vercel.app/",
     repositoryUrl: "https://github.com/BastienAuT/cyclone",
     summary:
