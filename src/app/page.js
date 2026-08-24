@@ -6,7 +6,32 @@ export default function Home() {
   return (
     <main>
       <Banner />
-      <FeaturedProject />
+
+      <section
+        className="border-y border-[#111411]/15 bg-[#111411] text-white dark:border-white/15"
+        aria-label="Repères sur le portfolio"
+      >
+        <ul className="mx-auto grid w-[min(1160px,calc(100%-48px))] divide-y divide-white/15 py-2 sm:grid-cols-3 sm:divide-x sm:divide-y-0 max-sm:w-[calc(100%-28px)]">
+          <li className="flex items-baseline gap-3 py-5 sm:px-6 sm:first:pl-0">
+            <strong className="text-2xl font-black text-[#4f86ff]">02</strong>
+            <span className="text-xs font-bold uppercase tracking-[0.1em]">
+              réalisations professionnelles
+            </span>
+          </li>
+          <li className="flex items-baseline gap-3 py-5 sm:px-6">
+            <strong className="text-2xl font-black text-[#4f86ff]">03</strong>
+            <span className="text-xs font-bold uppercase tracking-[0.1em]">
+              produits personnels
+            </span>
+          </li>
+          <li className="flex items-baseline gap-3 py-5 sm:px-6 sm:last:pr-0">
+            <strong className="text-2xl font-black text-[#4f86ff]">360°</strong>
+            <span className="text-xs font-bold uppercase tracking-[0.1em]">
+              interface, API et données
+            </span>
+          </li>
+        </ul>
+      </section>
 
       <section
         className="scroll-mt-[72px] border-y border-[#111411]/15 bg-[#e5e4de] dark:border-white/15 dark:bg-[#151816]"
@@ -27,11 +52,16 @@ export default function Home() {
           <div className="border-t border-[#111411]/20 dark:border-white/20">
             <article className="grid gap-6 border-b border-[#111411]/20 py-8 md:grid-cols-[.7fr_1.3fr] dark:border-white/20">
               <div>
-                <h3 className="text-xl font-black">Hoffmann AI</h3>
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <h3 className="text-xl font-black">Hoffmann AI</h3>
+                  <span className="text-xs font-extrabold text-[#1557e8] uppercase tracking-[0.1em] dark:text-[#4f86ff]">
+                    6 mois
+                  </span>
+                </div>
                 <p className="mt-1 text-sm text-[#5c6059] dark:text-[#a9aea5]">
                   Développeur web full-stack
                 </p>
-                <p className="mt-4 inline-flex border border-[#111411]/20 px-3 py-2 text-[10px] font-extrabold text-[#1557e8] uppercase tracking-[0.1em] dark:border-white/20 dark:text-[#4f86ff]">
+                <p className="mt-4 inline-flex border border-[#111411]/20 px-3 py-2 text-[11px] font-extrabold text-[#1557e8] uppercase tracking-[0.1em] dark:border-white/20 dark:text-[#4f86ff]">
                   Application métier en production
                 </p>
               </div>
@@ -60,7 +90,12 @@ export default function Home() {
 
             <article className="grid gap-6 border-b border-[#111411]/20 py-8 md:grid-cols-[.7fr_1.3fr] dark:border-white/20">
               <div>
-                <h3 className="text-xl font-black">Prepera</h3>
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <h3 className="text-xl font-black">Prepera</h3>
+                  <span className="text-xs font-extrabold text-[#1557e8] uppercase tracking-[0.1em] dark:text-[#4f86ff]">
+                    1 mois
+                  </span>
+                </div>
                 <p className="mt-1 text-sm text-[#5c6059] dark:text-[#a9aea5]">
                   Développeur JavaScript & Bubble
                 </p>
@@ -85,6 +120,8 @@ export default function Home() {
         </div>
       </section>
 
+      <FeaturedProject />
+
       <Projets />
 
       <section
@@ -102,9 +139,10 @@ export default function Home() {
 
             <div className="mt-14 grid gap-12 border-t border-[#111411]/20 pt-8 md:grid-cols-[1.1fr_.9fr] dark:border-white/20">
               <p className="leading-7 text-[#5c6059] dark:text-[#a9aea5]">
-                Je travaille de la conception de l’interface à l’intégration
-                des API, avec une attention particulière portée à la
-                maintenabilité, aux performances et à l’usage réel du produit.
+                Je travaille du cadrage produit à l’interface, aux API et aux
+                données, avec une attention particulière portée à la
+                maintenabilité, à la sécurité, aux performances et à l’usage
+                réel du produit.
               </p>
               <div>
                 <p className="mb-4 text-xs font-extrabold uppercase tracking-[0.1em]">
@@ -114,12 +152,14 @@ export default function Home() {
                   {[
                     "React",
                     "Next.js",
-                    "JavaScript",
-                    "Supabase / PostgreSQL",
-                    "LiveKit Cloud",
+                    "TypeScript",
+                    "PostgreSQL",
+                    "Authentification",
+                    "Sécurité applicative",
                     "API",
                     "Temps réel",
-                    "Performance",
+                    "Tests & CI",
+                    "Docker",
                   ].map((skill) => (
                     <li
                       key={skill}
@@ -129,6 +169,24 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
+              </div>
+            </div>
+
+            <div className="mt-14 grid gap-8 border border-[#246bfe]/30 bg-[#246bfe]/5 p-[clamp(24px,4vw,42px)] md:grid-cols-[.72fr_1.28fr]">
+              <p className="text-xs font-extrabold text-[#1557e8] uppercase tracking-[0.12em] dark:text-[#4f86ff]">
+                Méthode de travail
+              </p>
+              <div>
+                <h3 className="text-[clamp(1.45rem,2.2vw,2rem)] leading-tight font-black tracking-[-0.04em]">
+                  L’IA comme accélérateur, pas comme pilote automatique.
+                </h3>
+                <p className="mt-4 max-w-[700px] leading-7 text-[#5c6059] dark:text-[#a9aea5]">
+                  Sur mes produits personnels, j’utilise un workflow de
+                  développement assisté par IA pour explorer et implémenter plus
+                  vite. Je conserve la responsabilité du cadrage, des choix
+                  d’architecture, de la revue du code, des tests et de la
+                  livraison.
+                </p>
               </div>
             </div>
           </div>

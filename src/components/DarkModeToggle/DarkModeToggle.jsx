@@ -8,7 +8,7 @@ const DarkModeToggle = () => {
 
   return (
     <button
-      className="group grid size-6 cursor-pointer place-items-center"
+      className="group grid size-11 shrink-0 cursor-pointer place-items-center rounded-full transition-colors hover:bg-[#111411]/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#246bfe] motion-reduce:transition-none dark:hover:bg-white/10"
       type="button"
       onClick={toggle}
       aria-label={
@@ -17,7 +17,7 @@ const DarkModeToggle = () => {
       aria-pressed={mode === "dark"}
     >
       <span
-        className="size-3.5 rounded-full bg-[#111411] transition-transform group-hover:scale-125 dark:bg-[#edf0e8]"
+        className="size-3.5 rounded-full bg-[#111411] transition-transform group-hover:scale-125 motion-reduce:transform-none motion-reduce:transition-none dark:bg-[#edf0e8]"
         aria-hidden="true"
       />
     </button>

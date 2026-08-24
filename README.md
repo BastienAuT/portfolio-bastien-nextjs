@@ -1,6 +1,8 @@
 # Portfolio Bastien Autem
 
-Portfolio développé avec Next.js, React, Tailwind CSS et Bun.
+Portfolio développé avec Next.js, React, Tailwind CSS et Bun. Les projets et
+leurs études de cas sont décrits dans `src/data/projects.js` puis générés
+statiquement.
 
 ## Prérequis
 
@@ -13,7 +15,9 @@ Portfolio développé avec Next.js, React, Tailwind CSS et Bun.
 bun install
 ```
 
-Copier ensuite `.env.example` vers `.env` et renseigner la connexion MongoDB.
+Copier ensuite `.env.example` vers `.env` et renseigner
+`NEXT_PUBLIC_SITE_URL` avec l'URL publique du portfolio. Sur Vercel, l'URL de
+production est utilisée automatiquement si cette variable n'est pas définie.
 
 ## Développement
 
