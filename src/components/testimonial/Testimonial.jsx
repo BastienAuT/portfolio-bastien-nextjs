@@ -1,7 +1,13 @@
 const recommendationUrl =
   "https://www.linkedin.com/in/bastien-autem/details/recommendations/";
 
-const Testimonial = () => {
+const copy = {
+  fr: { eyebrow: "Recommandation", title: "Ce qu’on dit de mon travail", intro: "Un retour reçu à l’issue de mon expérience chez Hoffmann AI.", quote: "« Bastien possède une solide compréhension des technologies Frontend et navigue avec habileté dans des défis complexes. »", role: "Ancien responsable direct · Hoffmann AI", date: "4 mai 2024", link: "Voir sur LinkedIn", aria: "Voir la recommandation d’Alexander Hoffmann sur LinkedIn dans un nouvel onglet" },
+  en: { eyebrow: "Recommendation", title: "What people say about my work", intro: "Feedback received after my experience at Hoffmann AI.", quote: "“Bastien has a strong understanding of frontend technologies and skillfully navigates complex challenges.”", role: "Former direct manager · Hoffmann AI", date: "May 4, 2024", link: "View on LinkedIn", aria: "View Alexander Hoffmann’s recommendation on LinkedIn in a new tab" },
+};
+
+const Testimonial = ({ locale = "fr" }) => {
+  const t = copy[locale];
   return (
     <section
       className="scroll-mt-[72px] border-b border-[#111411]/15 bg-[#f4f3ee] dark:border-white/15 dark:bg-[#0d0f0e]"
@@ -12,16 +18,16 @@ const Testimonial = () => {
         <div className="grid gap-8 lg:grid-cols-[.65fr_1.35fr] lg:items-start lg:gap-12">
           <div>
             <p className="text-xs font-extrabold text-[#1557e8] uppercase tracking-[0.12em] dark:text-[#4f86ff]">
-              Recommandation
+              {t.eyebrow}
             </p>
             <h2
               className="mt-3 max-w-[390px] text-[clamp(1.65rem,2.5vw,2.45rem)] leading-[1.05] font-black tracking-[-0.045em]"
               id="recommandation-title"
             >
-              Ce qu’on dit de mon travail
+              {t.title}
             </h2>
             <p className="mt-4 max-w-[360px] text-sm leading-6 text-[#5c6059] dark:text-[#a9aea5]">
-              Un retour reçu à l’issue de mon expérience chez Hoffmann AI.
+              {t.intro}
             </p>
           </div>
 
@@ -38,8 +44,7 @@ const Testimonial = () => {
               cite={recommendationUrl}
             >
               <p>
-                « Bastien possède une solide compréhension des technologies
-                Frontend et navigue avec habileté dans des défis complexes. »
+                {t.quote}
               </p>
             </blockquote>
 
@@ -56,10 +61,10 @@ const Testimonial = () => {
                     Alexander Hoffmann
                   </cite>
                   <p className="mt-0.5 text-sm text-[#5c6059] dark:text-[#a9aea5]">
-                    Ancien responsable direct · Hoffmann AI
+                    {t.role}
                   </p>
                   <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.08em] text-[#5c6059] dark:text-[#a9aea5]">
-                    <time dateTime="2024-05-04">4 mai 2024</time> · LinkedIn
+                    <time dateTime="2024-05-04">{t.date}</time> · LinkedIn
                   </p>
                 </div>
               </div>
@@ -69,9 +74,9 @@ const Testimonial = () => {
                 href={recommendationUrl}
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Voir la recommandation d’Alexander Hoffmann sur LinkedIn dans un nouvel onglet"
+                aria-label={t.aria}
               >
-                Voir sur LinkedIn <span aria-hidden="true">↗</span>
+                {t.link} <span aria-hidden="true">↗</span>
               </a>
             </figcaption>
           </figure>

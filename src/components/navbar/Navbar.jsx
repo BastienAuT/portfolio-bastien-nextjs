@@ -1,24 +1,33 @@
-import Link from "next/link";
-import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
+"use client";
 
-const navigationItems = [
-  { href: "/#experience", label: "Expérience" },
-  { href: "/#projets", label: "Projets" },
-  { href: "/#a-propos", label: "À propos" },
-  { href: "/cv", label: "CV" },
-];
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
+import { isEnglishPath, localePath, ui } from "@/src/lib/i18n";
 
 const Navbar = () => {
+  const pathname = usePathname();
+  const locale = isEnglishPath(pathname) ? "en" : "fr";
+  const t = ui[locale];
+  const home = localePath(locale, "/");
+  const navigationItems = [
+    { href: `${home}#experience`, label: t.nav.experience },
+    { href: `${home}#projets`, label: t.nav.projects },
+    { href: `${home}#a-propos`, label: t.nav.about },
+    { href: localePath(locale, "/cv"), label: t.nav.cv },
+  ];
+  const otherLocale = locale === "en" ? "fr" : "en";
+
   return (
     <header className="sticky top-0 z-30 border-b border-[#111411]/15 bg-[#f4f3ee]/90 backdrop-blur-xl dark:border-white/15 dark:bg-[#0d0f0e]/90">
         <nav
           className="mx-auto flex h-[72px] w-[min(1160px,calc(100%-48px))] items-center justify-between gap-4 max-sm:w-[calc(100%-28px)] md:gap-8"
-          aria-label="Navigation principale"
+          aria-label={t.nav.aria}
         >
           <Link
-            href="/"
+            href={home}
             className="group inline-flex items-center gap-2.5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#246bfe]"
-            aria-label="Bastien Autem — Accueil"
+            aria-label={t.nav.home}
           >
             <span
               className="inline-flex [font-family:var(--font-space-grotesk)] text-[1.35rem] leading-none font-black tracking-[-0.13em]"
@@ -56,12 +65,12 @@ const Navbar = () => {
               className="hidden text-xs font-extrabold text-[#1557e8] transition-opacity hover:opacity-65 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#246bfe] md:inline-flex dark:text-[#4f86ff]"
               href="mailto:deh2win@gmail.com"
             >
-              Contact
+              {t.nav.contact}
             </a>
 
             <details className="group relative md:hidden">
               <summary className="flex min-h-11 cursor-pointer list-none items-center gap-2 px-2 text-xs font-extrabold text-[#1557e8] [&::-webkit-details-marker]:hidden dark:text-[#4f86ff]">
-                Menu
+                {t.nav.menu}
                 <span
                   className="text-base leading-none transition-transform group-open:rotate-45 motion-reduce:transition-none"
                   aria-hidden="true"
@@ -83,12 +92,20 @@ const Navbar = () => {
                   className="flex min-h-11 items-center border-t border-[#111411]/15 px-3 text-sm font-bold text-[#1557e8] transition-colors hover:bg-[#246bfe] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#246bfe] dark:border-white/15 dark:text-[#4f86ff]"
                   href="mailto:deh2win@gmail.com"
                 >
-                  Contact
+                  {t.nav.contact}
                 </a>
               </div>
             </details>
 
-            <DarkModeToggle />
+            <Link
+              className="inline-flex min-h-11 min-w-11 items-center justify-center text-xs font-extrabold text-[#1557e8] transition-opacity hover:opacity-65 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#246bfe] dark:text-[#4f86ff]"
+              href={localePath(otherLocale, pathname)}
+              hrefLang={otherLocale}
+              aria-label={t.language.label}
+            >
+              {t.language.short}
+            </Link>
+            <DarkModeToggle locale={locale} />
           </div>
         </nav>
     </header>

@@ -2,6 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects, projectsBySlug } from "@/src/data/projects";
+import { localePath } from "@/src/lib/i18n";
+
+const copy = {
+  fr: { all: "Tous les projets", open: "Ouvrir l’application", source: "Code source", preview: "Aperçu de", scope: "Cadre", role: "Mon rôle et ma contribution", stack: "Stack principale", eyebrow: "Étude de cas", narrative: "Du contexte aux choix de conception", sections: ["Contexte", "Enjeu et contraintes", "Approche", "Choix et compromis", "Résultat observable"], keyPoints: "Points clés", demonstrates: "Ce que le projet démontre", perspective: "Regard critique", limitsTitle: "Limites et suite logique", limitation: "Limite actuelle", next: "Prochaine étape", back: "Revenir aux projets", discover: "Découvrir" },
+  en: { all: "All projects", open: "Open application", source: "Source code", preview: "Preview of", scope: "Scope", role: "My role and contribution", stack: "Main stack", eyebrow: "Case study", narrative: "From context to design decisions", sections: ["Context", "Challenge and constraints", "Approach", "Decisions and tradeoffs", "Observable outcome"], keyPoints: "Key points", demonstrates: "What the project demonstrates", perspective: "Critical perspective", limitsTitle: "Limitations and next steps", limitation: "Current limitation", next: "Next step", back: "Back to projects", discover: "Explore" },
+};
 
 export const generateStaticParams = () =>
   projects.map((project) => ({ slug: project.slug }));
@@ -21,6 +27,10 @@ export const generateMetadata = async ({ params }) => {
     description: project.summary,
     alternates: {
       canonical: `/projets/${project.slug}`,
+      languages: {
+        "fr-FR": `/projets/${project.slug}`,
+        "en-US": `/en/projects/${project.slug}`,
+      },
     },
     openGraph: {
       type: "article",
@@ -38,23 +48,17 @@ export const generateMetadata = async ({ params }) => {
   };
 };
 
-const CaseStudyPage = async ({ params }) => {
-  const { slug } = await params;
-  const project = projectsBySlug[slug];
-
-  if (!project) {
-    notFound();
-  }
-
+export const CaseStudyContent = ({ project, locale = "fr" }) => {
+  const t = copy[locale];
   return (
     <main>
       <header className="border-b border-white/15 bg-[#111411] text-[#edf0e8]">
         <div className="mx-auto w-[min(1160px,calc(100%-48px))] py-[clamp(48px,7vw,88px)] max-sm:w-[calc(100%-28px)]">
           <Link
             className="inline-flex items-center gap-2 text-xs font-extrabold text-[#a9aea5] uppercase tracking-[0.1em] transition-colors hover:text-[#4f86ff]"
-            href="/#projets-selectionnes"
+            href={`${localePath(locale, "/")}#projets-selectionnes`}
           >
-            <span aria-hidden="true">←</span> Tous les projets
+            <span aria-hidden="true">←</span> {t.all}
           </Link>
 
           <div className="mt-14 grid items-end gap-10 md:grid-cols-[1.2fr_.8fr]">
@@ -80,7 +84,7 @@ const CaseStudyPage = async ({ params }) => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Ouvrir l’application <span className="ml-2" aria-hidden="true">↗</span>
+                  {t.open} <span className="ml-2" aria-hidden="true">↗</span>
                 </a>
                 {project.repositoryUrl && (
                   <a
@@ -89,7 +93,7 @@ const CaseStudyPage = async ({ params }) => {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Code source <span className="ml-2" aria-hidden="true">↗</span>
+                    {t.source} <span className="ml-2" aria-hidden="true">↗</span>
                   </a>
                 )}
               </div>
@@ -100,7 +104,7 @@ const CaseStudyPage = async ({ params }) => {
             <Image
               className="object-cover"
               src={project.cover}
-              alt={`Aperçu de ${project.title}`}
+              alt={`${t.preview} ${project.title}`}
               fill
               priority
               sizes="(max-width: 1200px) 100vw, 1160px"
@@ -110,7 +114,7 @@ const CaseStudyPage = async ({ params }) => {
           <dl className="grid border-x border-b border-white/15 md:grid-cols-3">
             <div className="border-b border-white/15 p-[clamp(22px,3vw,34px)] md:border-r md:border-b-0">
               <dt className="text-[11px] font-extrabold text-[#4f86ff] uppercase tracking-[0.12em]">
-                Cadre
+                {t.scope}
               </dt>
               <dd className="mt-3 text-sm leading-6 text-[#c9cec5]">
                 {project.scope}
@@ -118,7 +122,7 @@ const CaseStudyPage = async ({ params }) => {
             </div>
             <div className="border-b border-white/15 p-[clamp(22px,3vw,34px)] md:border-r md:border-b-0">
               <dt className="text-[11px] font-extrabold text-[#4f86ff] uppercase tracking-[0.12em]">
-                Mon rôle et ma contribution
+                {t.role}
               </dt>
               <dd className="mt-3 text-sm leading-6 text-[#c9cec5]">
                 <span className="block font-extrabold text-[#edf0e8]">
@@ -129,7 +133,7 @@ const CaseStudyPage = async ({ params }) => {
             </div>
             <div className="p-[clamp(22px,3vw,34px)]">
               <dt className="text-[11px] font-extrabold text-[#4f86ff] uppercase tracking-[0.12em]">
-                Stack principale
+                {t.stack}
               </dt>
               <dd className="mt-3 flex flex-wrap gap-2">
                 {project.technologies.map((technology) => (
@@ -149,22 +153,22 @@ const CaseStudyPage = async ({ params }) => {
       <div className="mx-auto w-[min(1160px,calc(100%-48px))] py-[110px] max-sm:w-[calc(100%-28px)] max-sm:py-20">
         <section aria-labelledby="case-narrative-title">
           <p className="text-xs font-extrabold text-[#1557e8] uppercase tracking-[0.12em] dark:text-[#4f86ff]">
-            Étude de cas
+            {t.eyebrow}
           </p>
           <h2
             className="mt-4 max-w-[780px] text-[clamp(2rem,3.6vw,3.5rem)] leading-[0.98] font-black tracking-[-0.055em]"
             id="case-narrative-title"
           >
-            Du contexte aux choix de conception
+            {t.narrative}
           </h2>
 
           <div className="mt-14 border-t border-[#111411]/20 dark:border-white/20">
             {[
-              ["01", "Contexte", project.context],
-              ["02", "Enjeu et contraintes", project.challenge],
-              ["03", "Approche", project.approach],
-              ["04", "Choix et compromis", project.tradeoffs],
-              ["05", "Résultat observable", project.result],
+              ["01", t.sections[0], project.context],
+              ["02", t.sections[1], project.challenge],
+              ["03", t.sections[2], project.approach],
+              ["04", t.sections[3], project.tradeoffs],
+              ["05", t.sections[4], project.result],
             ].map(([number, title, description]) => (
               <article
                 className="grid gap-5 border-b border-[#111411]/20 py-8 md:grid-cols-[.25fr_.47fr_1.28fr] dark:border-white/20"
@@ -186,13 +190,13 @@ const CaseStudyPage = async ({ params }) => {
           <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
             <div>
               <p className="text-xs font-extrabold text-[#1557e8] uppercase tracking-[0.12em] dark:text-[#4f86ff]">
-                Points clés
+                {t.keyPoints}
               </p>
               <h2
                 className="mt-4 text-[clamp(2rem,3.2vw,3rem)] leading-none font-black tracking-[-0.05em]"
                 id="case-details-title"
               >
-                Ce que le projet démontre
+                {t.demonstrates}
               </h2>
             </div>
           </div>
@@ -225,19 +229,19 @@ const CaseStudyPage = async ({ params }) => {
           aria-labelledby="case-perspective-title"
         >
           <p className="text-xs font-extrabold text-[#1557e8] uppercase tracking-[0.12em] dark:text-[#4f86ff]">
-            Regard critique
+            {t.perspective}
           </p>
           <h2
             className="mt-4 text-[clamp(2rem,3.2vw,3rem)] leading-none font-black tracking-[-0.05em]"
             id="case-perspective-title"
           >
-            Limites et suite logique
+            {t.limitsTitle}
           </h2>
 
           <div className="mt-10 grid border border-[#111411]/20 md:grid-cols-2 dark:border-white/20">
             <article className="border-b border-[#111411]/20 p-[clamp(24px,3vw,36px)] md:border-r md:border-b-0 dark:border-white/20">
               <p className="text-[11px] font-extrabold text-[#1557e8] uppercase tracking-[0.11em] dark:text-[#4f86ff]">
-                Limite actuelle
+                {t.limitation}
               </p>
               <p className="mt-5 leading-7 text-[#5c6059] dark:text-[#a9aea5]">
                 {project.limitations}
@@ -245,7 +249,7 @@ const CaseStudyPage = async ({ params }) => {
             </article>
             <article className="p-[clamp(24px,3vw,36px)]">
               <p className="text-[11px] font-extrabold text-[#1557e8] uppercase tracking-[0.11em] dark:text-[#4f86ff]">
-                Prochaine étape
+                {t.next}
               </p>
               <p className="mt-5 leading-7 text-[#5c6059] dark:text-[#a9aea5]">
                 {project.nextStep}
@@ -257,9 +261,9 @@ const CaseStudyPage = async ({ params }) => {
         <div className="mt-[110px] flex flex-wrap items-center justify-between gap-6 border-t border-[#111411]/20 pt-8 dark:border-white/20">
           <Link
             className="text-sm font-black text-[#1557e8] transition-colors hover:text-[#111411] dark:text-[#4f86ff] dark:hover:text-white"
-            href="/#projets-selectionnes"
+            href={`${localePath(locale, "/")}#projets-selectionnes`}
           >
-            ← Revenir aux projets
+            ← {t.back}
           </Link>
           <a
             className="inline-flex min-h-11 items-center bg-[#246bfe] px-5 py-3 text-xs font-extrabold uppercase tracking-[0.09em] text-white transition-colors hover:bg-[#1557e8] dark:hover:bg-[#4f86ff]"
@@ -267,7 +271,7 @@ const CaseStudyPage = async ({ params }) => {
             target="_blank"
             rel="noreferrer"
           >
-            Découvrir {project.title} <span className="ml-2" aria-hidden="true">↗</span>
+            {t.discover} {project.title} <span className="ml-2" aria-hidden="true">↗</span>
           </a>
         </div>
       </div>
@@ -275,4 +279,13 @@ const CaseStudyPage = async ({ params }) => {
   );
 };
 
-export default CaseStudyPage;
+export default async function CaseStudyPage({ params }) {
+  const { slug } = await params;
+  const project = projectsBySlug[slug];
+
+  if (!project) {
+    notFound();
+  }
+
+  return <CaseStudyContent project={project} />;
+}

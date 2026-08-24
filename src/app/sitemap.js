@@ -15,6 +15,16 @@ export default function sitemap() {
       changeFrequency: "monthly",
       priority: 0.6,
     },
+    {
+      url: absoluteUrl("/en"),
+      changeFrequency: "monthly",
+      priority: 1,
+    },
+    {
+      url: absoluteUrl("/en/cv"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
   ];
 
   const projectPages = projects.map((project) => ({
@@ -23,5 +33,11 @@ export default function sitemap() {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...projectPages];
+  const englishProjectPages = projects.map((project) => ({
+    url: absoluteUrl(`/en/projects/${project.slug}`),
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+
+  return [...staticPages, ...projectPages, ...englishProjectPages];
 }

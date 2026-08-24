@@ -1,22 +1,30 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
+  projects,
   personalProjects,
   professionalProjects,
 } from "@/src/data/projects";
+import { localizeProjects } from "@/src/data/projects.en";
+import { localePath } from "@/src/lib/i18n";
 
-const ProjectCard = ({ project }) => {
+const copy = {
+  fr: { caseStudy: "Voir l’étude de cas", open: "Ouvrir le site", tech: "Technologies utilisées pour", openAria: "Ouvrir le site", repoAria: "Ouvrir le dépôt GitHub de", recent: "Travaux récents", title: "Projets sélectionnés", intro: "Deux réalisations menées en contexte professionnel et trois produits personnels conçus de bout en bout, dont Cyclone présenté ci-dessus.", proEyebrow: "01 · Contexte professionnel", proTitle: "Réalisations professionnelles", proDescription: "Des fonctionnalités livrées dans un cadre de travail réel, avec un périmètre précis et des contraintes produit existantes.", personalEyebrow: "02 · Recherche personnelle", personalTitle: "Produits personnels", personalDescription: "Des applications conçues et développées de bout en bout pour approfondir l’architecture, la qualité et l’expérience produit." },
+  en: { caseStudy: "View case study", open: "Open website", tech: "Technologies used for", openAria: "Open the website", repoAria: "Open the GitHub repository for", recent: "Recent work", title: "Selected projects", intro: "Two projects delivered in a professional setting and three personal products designed and built end to end, including Cyclone above.", proEyebrow: "01 · Professional context", proTitle: "Professional work", proDescription: "Features delivered in a real work environment, within a defined scope and existing product constraints.", personalEyebrow: "02 · Personal exploration", personalTitle: "Personal products", personalDescription: "Applications designed and developed end to end to deepen my work on architecture, quality, and product experience." },
+};
+
+const ProjectCard = ({ project, locale, t }) => {
   return (
     <article className="group flex h-full flex-col overflow-hidden border border-[#111411]/20 bg-[#ebeae5] transition-colors hover:border-[#246bfe] dark:border-white/20 dark:bg-[#151816] dark:hover:border-[#4f86ff]">
       <Link
         className="relative block aspect-[16/9] overflow-hidden bg-[#111411] focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-[#246bfe]"
-        href={`/projets/${project.slug}`}
-        aria-label={`Voir l’étude de cas ${project.title}`}
+        href={localePath(locale, `/projets/${project.slug}`)}
+        aria-label={`${t.caseStudy} ${project.title}`}
       >
         <Image
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025] motion-reduce:transform-none motion-reduce:transition-none"
           src={project.cover}
-          alt={`Aperçu du projet ${project.title}`}
+          alt={`${locale === "en" ? "Preview of" : "Aperçu du projet"} ${project.title}`}
           fill
           sizes="(max-width: 767px) calc(100vw - 28px), (max-width: 1160px) calc((100vw - 72px) / 2), 568px"
         />
@@ -48,7 +56,7 @@ const ProjectCard = ({ project }) => {
         {project.technologies?.length > 0 && (
           <ul
             className="mt-6 flex flex-wrap gap-2"
-            aria-label={`Technologies utilisées pour ${project.title}`}
+            aria-label={`${t.tech} ${project.title}`}
           >
             {project.technologies.slice(0, 4).map((technology) => (
               <li
@@ -64,9 +72,9 @@ const ProjectCard = ({ project }) => {
         <div className="mt-auto flex flex-wrap items-center gap-x-5 gap-y-1 border-t border-[#111411]/20 pt-3 dark:border-white/20">
           <Link
             className="inline-flex min-h-11 items-center text-sm font-black text-[#1557e8] transition-colors hover:text-[#111411] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#246bfe] dark:text-[#4f86ff] dark:hover:text-white"
-            href={`/projets/${project.slug}`}
+            href={localePath(locale, `/projets/${project.slug}`)}
           >
-            Voir l’étude de cas <span aria-hidden="true">→</span>
+            {t.caseStudy} <span aria-hidden="true">→</span>
           </Link>
           {project.demoUrl && (
             <a
@@ -74,9 +82,9 @@ const ProjectCard = ({ project }) => {
               href={project.demoUrl}
               target="_blank"
               rel="noreferrer"
-              aria-label={`Ouvrir le site ${project.title} dans un nouvel onglet`}
+              aria-label={`${t.openAria} ${project.title} ${locale === "en" ? "in a new tab" : "dans un nouvel onglet"}`}
             >
-              Ouvrir le site <span aria-hidden="true">↗</span>
+              {t.open} <span aria-hidden="true">↗</span>
             </a>
           )}
           {project.repositoryUrl && (
@@ -85,7 +93,7 @@ const ProjectCard = ({ project }) => {
               href={project.repositoryUrl}
               target="_blank"
               rel="noreferrer"
-              aria-label={`Ouvrir le dépôt GitHub de ${project.title} dans un nouvel onglet`}
+              aria-label={`${t.repoAria} ${project.title} ${locale === "en" ? "in a new tab" : "dans un nouvel onglet"}`}
             >
               GitHub <span aria-hidden="true">↗</span>
             </a>
@@ -101,6 +109,8 @@ const ProjectGroup = ({
   title,
   description,
   projects,
+  locale,
+  t,
   withTopMargin = true,
 }) => {
   if (!projects?.length) {
@@ -133,14 +143,22 @@ const ProjectGroup = ({
 
       <div className="grid gap-6 md:grid-cols-2">
         {projects.map((project) => (
-          <ProjectCard key={project.slug} project={project} />
+          <ProjectCard key={project.slug} project={project} locale={locale} t={t} />
         ))}
       </div>
     </section>
   );
 };
 
-const Projets = () => {
+const Projets = ({ locale = "fr" }) => {
+  const t = copy[locale];
+  const localizedProjects = locale === "en" ? localizeProjects(projects) : projects;
+  const localizedProfessional = locale === "en"
+    ? localizedProjects.filter((project) => project.kind === "professional")
+    : professionalProjects;
+  const localizedPersonal = locale === "en"
+    ? localizedProjects.filter((project) => project.kind === "personal" && project.slug !== "cyclone")
+    : personalProjects;
   return (
     <section
       className="mx-auto w-[min(1160px,calc(100%-48px))] scroll-mt-[72px] py-[110px] max-sm:w-[calc(100%-28px)] max-sm:py-20"
@@ -149,32 +167,34 @@ const Projets = () => {
       <div className="mb-16 flex flex-wrap items-end justify-between gap-8">
         <div>
           <p className="mb-4 text-xs font-extrabold text-[#1557e8] uppercase tracking-[0.12em] dark:text-[#4f86ff]">
-            Travaux récents
+            {t.recent}
           </p>
           <h2 className="max-w-[700px] text-[clamp(2rem,3.6vw,3.5rem)] leading-[0.98] font-black tracking-[-0.055em]">
-            Projets sélectionnés
+            {t.title}
           </h2>
         </div>
         <p className="max-w-[390px] text-sm leading-6 text-[#5c6059] dark:text-[#a9aea5]">
-          Deux réalisations menées en contexte professionnel et trois
-          produits personnels conçus de bout en bout, dont Cyclone présenté
-          ci-dessus.
+          {t.intro}
         </p>
       </div>
 
       <ProjectGroup
-        eyebrow="01 · Contexte professionnel"
-        title="Réalisations professionnelles"
-        description="Des fonctionnalités livrées dans un cadre de travail réel, avec un périmètre précis et des contraintes produit existantes."
-        projects={professionalProjects}
+        eyebrow={t.proEyebrow}
+        title={t.proTitle}
+        description={t.proDescription}
+        projects={localizedProfessional}
+        locale={locale}
+        t={t}
         withTopMargin={false}
       />
 
       <ProjectGroup
-        eyebrow="02 · Recherche personnelle"
-        title="Produits personnels"
-        description="Des applications conçues et développées de bout en bout pour approfondir l’architecture, la qualité et l’expérience produit."
-        projects={personalProjects}
+        eyebrow={t.personalEyebrow}
+        title={t.personalTitle}
+        description={t.personalDescription}
+        projects={localizedPersonal}
+        locale={locale}
+        t={t}
       />
     </section>
   );

@@ -7,6 +7,7 @@ export const metadata = {
     "CV et repères professionnels de Bastien Autem, développeur full-stack orienté produit spécialisé en React, Next.js et TypeScript.",
   alternates: {
     canonical: "/cv",
+    languages: { "fr-FR": "/cv", "en-US": "/en/cv" },
   },
   openGraph: {
     title: "CV · Bastien Autem",

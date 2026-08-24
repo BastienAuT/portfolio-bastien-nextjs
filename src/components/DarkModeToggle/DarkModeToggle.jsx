@@ -2,9 +2,11 @@
 
 import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
+import { ui } from "@/src/lib/i18n";
 
-const DarkModeToggle = () => {
+const DarkModeToggle = ({ locale = "fr" }) => {
   const { toggle, mode } = useContext(ThemeContext);
+  const t = ui[locale].theme;
 
   return (
     <button
@@ -12,7 +14,7 @@ const DarkModeToggle = () => {
       type="button"
       onClick={toggle}
       aria-label={
-        mode === "light" ? "Activer le thème sombre" : "Activer le thème clair"
+        mode === "light" ? t.dark : t.light
       }
       aria-pressed={mode === "dark"}
     >

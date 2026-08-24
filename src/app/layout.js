@@ -4,6 +4,7 @@ import { ThemeProvider } from "../context/ThemeContext";
 import { siteDescription, siteName, siteUrl } from "@/src/lib/site";
 import "./globals.css";
 import localFont from "next/font/local";
+import { headers } from "next/headers";
 
 const inter = localFont({
   src: "./fonts/inter-latin-variable.woff2",
@@ -43,6 +44,10 @@ export const metadata = {
   description: siteDescription,
   alternates: {
     canonical: "./",
+    languages: {
+      "fr-FR": "/",
+      "en-US": "/en",
+    },
   },
   authors: [{ name: "Bastien Autem", url: siteUrl }],
   creator: "Bastien Autem",
@@ -117,9 +122,43 @@ const structuredData = {
   ],
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const requestHeaders = await headers();
+  const locale = requestHeaders.get("x-portfolio-locale") === "en" ? "en" : "fr";
+  const skipLink = locale === "en" ? "Skip to main content" : "Aller au contenu principal";
+  const localizedStructuredData = {
+    ...structuredData,
+    "@graph": structuredData["@graph"].map((item) => {
+      if (item["@type"] === "Person" && locale === "en") {
+        return {
+          ...item,
+          jobTitle: "Product-minded full-stack developer",
+          knowsAbout: item.knowsAbout.map((topic) =>
+            topic === "API web" ? "Web APIs" : topic,
+          ),
+        };
+      }
+
+      if (item["@type"] === "WebSite") {
+        return locale === "en"
+          ? {
+              ...item,
+              "@id": `${siteUrl}/en/#website`,
+              url: `${siteUrl}/en`,
+              name: "Bastien Autem’s Portfolio",
+              description:
+                "Bastien Autem’s portfolio: a product-minded full-stack developer specializing in React, Next.js, and TypeScript.",
+              inLanguage: "en-US",
+            }
+          : { ...item, inLanguage: "fr-FR" };
+      }
+
+      return item;
+    }),
+  };
+
   return (
-    <html lang="fr" data-scroll-behavior="smooth" suppressHydrationWarning>
+    <html lang={locale} data-scroll-behavior="smooth" suppressHydrationWarning>
       <body
         className={`${inter.className} ${inter.variable} ${spaceGrotesk.variable} antialiased`}
       >
@@ -128,11 +167,11 @@ export default function RootLayout({ children }) {
           className="fixed top-3 left-3 z-[100] -translate-y-24 bg-[#246bfe] px-4 py-3 text-sm font-extrabold text-white shadow-lg transition-transform focus:translate-y-0 focus:outline-2 focus:outline-offset-2 focus:outline-[#111411] dark:focus:outline-white"
           href="#main-content"
         >
-          Aller au contenu principal
+          {skipLink}
         </a>
         <script
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+            __html: JSON.stringify(localizedStructuredData).replace(/</g, "\\u003c"),
           }}
           type="application/ld+json"
         />
