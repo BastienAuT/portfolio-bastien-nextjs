@@ -13,24 +13,24 @@ export default function Home() {
         aria-label="Repères sur le portfolio"
       >
         <ul className="mx-auto grid w-[min(1160px,calc(100%-48px))] divide-y divide-white/15 py-2 sm:grid-cols-3 sm:divide-x sm:divide-y-0 max-sm:w-[calc(100%-28px)]">
-          <li className="flex items-baseline gap-3 py-5 sm:px-6 sm:first:pl-0">
-            <strong className="text-2xl font-black text-[#4f86ff]">02</strong>
-            <span className="text-xs font-bold uppercase tracking-[0.1em]">
-              réalisations professionnelles
-            </span>
-          </li>
-          <li className="flex items-baseline gap-3 py-5 sm:px-6">
-            <strong className="text-2xl font-black text-[#4f86ff]">03</strong>
-            <span className="text-xs font-bold uppercase tracking-[0.1em]">
-              produits personnels
-            </span>
-          </li>
-          <li className="flex items-baseline gap-3 py-5 sm:px-6 sm:last:pr-0">
-            <strong className="text-2xl font-black text-[#4f86ff]">360°</strong>
-            <span className="text-xs font-bold uppercase tracking-[0.1em]">
-              interface, API et données
-            </span>
-          </li>
+          {[
+            "Full-stack, de bout en bout",
+            "Produit · UI · API · Données · Tests",
+            "Applications livrées en production",
+          ].map((statement) => (
+            <li
+              className="flex items-center gap-4 py-5 sm:px-6 sm:first:pl-0 sm:last:pr-0"
+              key={statement}
+            >
+              <span
+                className="h-px w-8 shrink-0 bg-[#4f86ff]"
+                aria-hidden="true"
+              />
+              <strong className="text-sm leading-5 font-extrabold">
+                {statement}
+              </strong>
+            </li>
+          ))}
         </ul>
       </section>
 
