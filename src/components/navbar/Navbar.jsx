@@ -2,8 +2,8 @@ import Link from "next/link";
 import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 
 const navigationItems = [
-  { href: "/#projets", label: "Projets" },
   { href: "/#experience", label: "Expérience" },
+  { href: "/#projets", label: "Projets" },
   { href: "/#a-propos", label: "À propos" },
   { href: "/cv", label: "CV" },
 ];

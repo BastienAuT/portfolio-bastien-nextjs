@@ -1,6 +1,7 @@
 import Banner from "../components/banner/Banner";
 import FeaturedProject from "../components/featuredProject/FeaturedProject";
 import Projets from "../components/projets/Projets";
+import Testimonial from "../components/testimonial/Testimonial";
 
 export default function Home() {
   return (
@@ -119,6 +120,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <Testimonial />
 
       <FeaturedProject />
 
