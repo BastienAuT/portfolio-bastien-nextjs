@@ -52,6 +52,58 @@ export const projects = [
     ],
   },
   {
+    slug: "surgyah",
+    title: "Surgyah",
+    kind: "personal",
+    kindLabel: "Projet personnel",
+    category: "Résilience · Simulation distribuée",
+    cover: "/projects/surgyah-cover.webp",
+    demoUrl: "https://surgyah.vercel.app/",
+    repositoryUrl: "https://github.com/BastienAuT/Surgyah",
+    summary:
+      "Un laboratoire visuel pour construire une infrastructure, provoquer des pannes et comprendre leur propagation grâce à un moteur de simulation déterministe.",
+    scope:
+      "Projet personnel open source conçu comme une démonstration d’architecture et de pédagogie technique. La démo publique s’exécute dans le navigateur, tandis que le dépôt fournit un mode distribué complet avec Docker.",
+    role: "Conception produit, architecture et développement full-stack",
+    contribution:
+      "J’ai conçu le parcours guidé, le canvas d’infrastructure, le moteur de simulation, les diagnostics et la comparaison des essais, ainsi que l’architecture distribuée optionnelle et sa documentation.",
+    context:
+      "Les pannes d’une architecture distribuée sont difficiles à expliquer avec un schéma statique : une saturation locale peut remplir une file, ralentir une dépendance puis dégrader tout le parcours utilisateur. Surgyah transforme ces relations invisibles en une expérience interactive et progressive.",
+    challenge:
+      "Modéliser assez fidèlement la capacité, les files d’attente, les dépendances et les incidents pour produire des résultats utiles, tout en gardant chaque conséquence compréhensible par une personne qui découvre la résilience.",
+    approach:
+      "J’ai isolé un moteur TypeScript pur qui compile le graphe et calcule chaque état sans dépendre de l’heure ni d’un service externe. Trois missions guidées appliquent un pic de trafic, la perte d’une API et une panne PostgreSQL ; l’interface visualise leur propagation, les métriques et la chaîne causale en direct.",
+    tradeoffs:
+      "La démo publique exécute le moteur dans le navigateur pour rester immédiate, gratuite et autonome, mais elle ne persiste pas les essais. Le même moteur peut aussi tourner dans une architecture Docker où Next.js enregistre les runs, Redis Streams alimente un worker Bun et SSE diffuse les résultats.",
+    result:
+      "La version en ligne permet de modifier une infrastructure, lancer 18 étapes déterministes, suivre CPU, files, latence et taux de succès, puis comparer deux essais avant et après amélioration. Le dépôt documente et teste aussi le parcours distribué PostgreSQL, Redis et worker.",
+    limitations:
+      "La démo navigateur ne conserve ni les positions du canvas ni l’historique après fermeture. Dans le mode distribué, la reprise après le crash d’un worker et les commandes de pause ou d’arrêt ne font pas encore partie du MVP.",
+    nextStep:
+      "Persister la disposition du canvas et l’historique des comparaisons, puis ajouter la récupération des runs interrompus et des checkpoints au mode distribué.",
+    technologies: ["Next.js", "TypeScript", "React Flow", "PostgreSQL", "Redis", "Bun", "Docker"],
+    highlights: [
+      {
+        label: "Simulation",
+        title: "Un moteur déterministe",
+        description:
+          "Chaque tick part du même état et des mêmes événements pour produire un résultat reproductible, testable sans API externe ni IA.",
+      },
+      {
+        label: "Pédagogie",
+        title: "De la panne à l’impact",
+        description:
+          "Le graphe, les métriques et la chaîne causale relient l’incident technique à ses conséquences concrètes pour l’utilisateur.",
+      },
+      {
+        label: "Architecture",
+        title: "Deux modes, un moteur",
+        description:
+          "La démo autonome partage son cœur de calcul avec un parcours distribué associant PostgreSQL, Redis Streams, worker Bun et SSE.",
+      },
+    ],
+  },
+  {
     slug: "jetscanner",
     title: "JetScanner",
     kind: "professional",
