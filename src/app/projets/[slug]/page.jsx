@@ -78,14 +78,14 @@ export const CaseStudyContent = ({ project, locale = "fr" }) => {
                 {project.summary}
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
-                <a
+                {project.demoUrl && <a
                   className="inline-flex min-h-11 items-center bg-[#246bfe] px-5 py-3 text-xs font-extrabold uppercase tracking-[0.09em] text-white transition-colors hover:bg-[#4f86ff]"
                   href={project.demoUrl}
                   target="_blank"
                   rel="noreferrer"
                 >
                   {t.open} <span className="ml-2" aria-hidden="true">↗</span>
-                </a>
+                </a>}
                 {project.repositoryUrl && (
                   <a
                     className="inline-flex min-h-11 items-center border border-white/25 px-5 py-3 text-xs font-extrabold uppercase tracking-[0.09em] transition-colors hover:border-[#4f86ff] hover:text-[#4f86ff]"
@@ -265,14 +265,14 @@ export const CaseStudyContent = ({ project, locale = "fr" }) => {
           >
             ← {t.back}
           </Link>
-          <a
+          {project.demoUrl && <a
             className="inline-flex min-h-11 items-center bg-[#246bfe] px-5 py-3 text-xs font-extrabold uppercase tracking-[0.09em] text-white transition-colors hover:bg-[#1557e8] dark:hover:bg-[#4f86ff]"
             href={project.demoUrl}
             target="_blank"
             rel="noreferrer"
           >
             {t.discover} {project.title} <span className="ml-2" aria-hidden="true">↗</span>
-          </a>
+          </a>}
         </div>
       </div>
     </main>

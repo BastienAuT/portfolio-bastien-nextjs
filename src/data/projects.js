@@ -1,5 +1,57 @@
 export const projects = [
   {
+    slug: "axion",
+    title: "Axion",
+    kind: "personal",
+    kindLabel: "Projet personnel",
+    category: "SaaS métier · Interventions terrain",
+    cover: "/projects/axion-cover.png",
+    demoUrl: null,
+    repositoryUrl: "https://github.com/BastienAuT/Axion",
+    summary:
+      "Une application de gestion d’interventions qui relie planning, tournée technicien, rapports signés et facturation, avec des parcours adaptés au responsable, au technicien et au client.",
+    scope:
+      "Projet personnel de démonstration destiné aux artisans et aux équipes de maintenance. Les parcours s’appuient sur des exemples métier et une API persistante ; ils ne représentent pas l’activité d’une entreprise cliente.",
+    role: "Conception produit, interface et développement full-stack",
+    contribution:
+      "J’ai conçu les trois parcours métier, le planning, le suivi des interventions et l’édition des rapports. J’ai aussi structuré les données, intégré l’authentification par organisation et développé la gestion des clients, des devis et des factures.",
+    context:
+      "Une intervention commence au bureau et se termine sur le terrain, mais son suivi traverse plusieurs outils : planning, coordonnées client, compte rendu et documents commerciaux. Axion rassemble ces étapes autour d’une même intervention pour donner à chaque profil les informations et les actions utiles à son rôle.",
+    challenge:
+      "Maintenir la cohérence entre planification, affectation, changements de statut et clôture signée, tout en isolant les données de chaque organisation. Sur mobile, le technicien doit pouvoir retrouver sa tournée et rédiger son rapport avec une interface adaptée au terrain.",
+    approach:
+      "Next.js et TypeScript portent les écrans et les API, tandis que Drizzle structure une base libSQL, locale avec SQLite ou distante avec Turso. Better Auth fournit les sessions et les rôles ; chaque API recontrôle l’organisation et l’accès à l’intervention. Le rapport rassemble compte rendu, matériel, photos et signature vectorielle, puis peut être exporté en PDF. La finalisation est transactionnelle et les empreintes des pièces sont inscrites dans un journal d’audit.",
+    tradeoffs:
+      "Conserver les photos dans libSQL simplifie le déploiement, mais impose des limites de taille et un quota par organisation. La PWA privilégie la confidentialité : les API et les pages authentifiées ne sont pas mises en cache. Les données déjà ouvertes restent visibles en cas de coupure, mais les opérations métier nécessitent une connexion.",
+    result:
+      "Le projet couvre le parcours du planning au rapport signé, avec tableau de bord responsable, tournée mobile et suivi client. Il persiste les interventions, les clients et leurs sites, les rapports, les devis et les factures avec une numérotation séquentielle. Le dépôt inclut des tests de validation, de persistance et d’autorisations ; aucun gain de productivité en conditions réelles n’est revendiqué.",
+    limitations:
+      "Le mode démonstration mêle des exemples locaux signalés et des données persistées. Les mutations hors connexion, les invitations par e-mail et la réinitialisation du mot de passe par e-mail ne sont pas disponibles. Le stockage des photos reste volontairement plafonné.",
+    nextStep:
+      "Ajouter les parcours d’invitation et de récupération de compte, puis préparer une synchronisation des modifications hors connexion avec une gestion explicite des conflits. Valider ensuite le parcours complet avec une équipe pilote avant un usage métier réel.",
+    technologies: ["Next.js", "TypeScript", "Drizzle", "Better Auth", "Turso / libSQL", "PWA", "Bun"],
+    highlights: [
+      {
+        label: "Produit",
+        title: "Trois rôles, un même suivi",
+        description:
+          "Le responsable planifie, le technicien suit sa tournée et rédige le rapport, le client consulte ses interventions. Les accès sont vérifiés côté serveur.",
+      },
+      {
+        label: "Traçabilité",
+        title: "Du terrain au rapport signé",
+        description:
+          "Photos contrôlées, signature vectorielle, export PDF et journal d’audit documentent la clôture d’une intervention dans un même parcours.",
+      },
+      {
+        label: "Architecture",
+        title: "Des données isolées par organisation",
+        description:
+          "Les sessions Better Auth, les contrôles métier et les requêtes filtrées encadrent l’accès aux données selon l’organisation, l’affectation et le profil.",
+      },
+    ],
+  },
+  {
     slug: "cyclone",
     title: "Cyclone",
     kind: "personal",

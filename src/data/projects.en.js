@@ -1,4 +1,24 @@
 const projectTranslations = {
+  axion: {
+    kindLabel: "Personal project",
+    category: "Business SaaS · Field service",
+    summary: "A field-service application connecting scheduling, technician rounds, signed reports, and billing through dedicated manager, technician, and customer journeys.",
+    scope: "A personal demonstration project for tradespeople and maintenance teams. The journeys combine sample business data and a persistent API; they do not represent the activity of a client company.",
+    role: "Product design, interface design, and full-stack development",
+    contribution: "I designed the three role-specific journeys, scheduling, intervention tracking, and report editing. I also structured the data, integrated organization-based authentication, and built customer, quote, and invoice management.",
+    context: "A service visit starts in the office and ends in the field, but tracking it spans several tools: scheduling, customer details, work reports, and commercial documents. Axion brings these steps together around a single intervention, giving each role the relevant information and actions.",
+    challenge: "Keep scheduling, assignments, status changes, and signed completion consistent while isolating each organization’s data. On mobile, technicians need to find their rounds and write reports through an interface suited to field work.",
+    approach: "Next.js and TypeScript power the screens and APIs, while Drizzle structures a libSQL database, using local SQLite or remote Turso. Better Auth provides sessions and roles; every API checks the organization and access to the intervention again. Reports combine a work summary, materials, photos, and a vector signature, with PDF export. Finalization is transactional, and attachment fingerprints are recorded in an audit log.",
+    tradeoffs: "Keeping photos in libSQL simplifies deployment but requires file-size limits and a quota per organization. The PWA prioritizes confidentiality: APIs and authenticated pages are never cached. Already loaded data remains visible when connectivity drops, but business operations require a connection.",
+    result: "The project covers the journey from scheduling to a signed report, with a manager dashboard, mobile technician rounds, and customer tracking. It persists interventions, customers and their sites, reports, quotes, and invoices with sequential numbering. The repository includes validation, persistence, and authorization tests; no real-world productivity gain is claimed.",
+    limitations: "Demo mode combines clearly labeled local examples with persisted data. Offline mutations, email invitations, and email password recovery are unavailable. Photo storage remains deliberately capped.",
+    nextStep: "Add invitations and account recovery, then prepare offline change synchronization with explicit conflict handling. Validate the complete journey with a pilot team before real business use.",
+    highlights: [
+      { label: "Product", title: "Three roles, one shared journey", description: "Managers schedule, technicians follow their rounds and write reports, and customers view their interventions. Access is checked on the server." },
+      { label: "Traceability", title: "From field work to a signed report", description: "Validated photos, vector signatures, PDF export, and an audit log document intervention completion in one journey." },
+      { label: "Architecture", title: "Data isolated by organization", description: "Better Auth sessions, business rules, and filtered queries govern data access by organization, assignment, and role." },
+    ],
+  },
   cyclone: {
     kindLabel: "Personal project",
     category: "Communication · Real time",
