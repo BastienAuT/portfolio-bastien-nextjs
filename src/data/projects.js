@@ -6,7 +6,7 @@ export const projects = [
     kindLabel: "Projet personnel",
     category: "SaaS métier · Interventions terrain",
     cover: "/projects/axion-cover.png",
-    demoUrl: null,
+    demoUrl: "https://axion-five-indol.vercel.app/",
     repositoryUrl: "https://github.com/BastienAuT/Axion",
     summary:
       "Une application de gestion d’interventions qui relie planning, tournée technicien, rapports signés et facturation, avec des parcours adaptés au responsable, au technicien et au client.",
