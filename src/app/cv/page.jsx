@@ -57,8 +57,8 @@ const Cv = () => {
             <div className="mt-7 flex flex-wrap gap-3">
               <a
                 className="inline-flex min-h-11 items-center bg-[#246bfe] px-5 py-3 text-xs font-extrabold uppercase tracking-[0.09em] text-white transition-colors hover:bg-[#4f86ff] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#4f86ff]"
-                href="/CV_Bastien_Autem_2026.pdf"
-                download="CV-Bastien-Autem-2026.pdf"
+                href="/CV_Bastien_Autem_portfolio.pdf"
+                download="CV-Bastien-Autem-Portfolio.pdf"
               >
                 Télécharger le PDF
                 <span className="ml-2" aria-hidden="true">
@@ -177,8 +177,8 @@ const Cv = () => {
             </div>
             <a
               className="text-sm font-black text-[#1557e8] transition-colors hover:text-[#111411] dark:text-[#4f86ff] dark:hover:text-white"
-              href="/CV_Bastien_Autem_2026.pdf"
-              download="CV-Bastien-Autem-2026.pdf"
+              href="/CV_Bastien_Autem_portfolio.pdf"
+              download="CV-Bastien-Autem-Portfolio.pdf"
             >
               Télécharger le document <span aria-hidden="true">↓</span>
             </a>
@@ -186,7 +186,7 @@ const Cv = () => {
 
           <figure>
             <Image
-              src="/CV_Bastien_Autem_2026.png"
+              src="/CV_Bastien_Autem_portfolio.png"
               className="h-auto w-full border border-black/15 dark:border-white/15"
               alt=""
               height={2021}

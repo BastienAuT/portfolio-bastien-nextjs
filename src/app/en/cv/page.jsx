@@ -45,7 +45,7 @@ export default function EnglishResume() {
           <div>
             <p className="leading-7 text-[#c9cec5]">I design and build web applications end to end with React, Next.js, and TypeScript, from interfaces to APIs and data.</p>
             <div className="mt-7 flex flex-wrap gap-3">
-              <a className="inline-flex min-h-11 items-center bg-[#246bfe] px-5 py-3 text-xs font-extrabold uppercase tracking-[0.09em] text-white transition-colors hover:bg-[#4f86ff]" href="/CV_Bastien_Autem_2026_EN_v2.pdf" download="CV-Bastien-Autem-2026-EN.pdf">
+              <a className="inline-flex min-h-11 items-center bg-[#246bfe] px-5 py-3 text-xs font-extrabold uppercase tracking-[0.09em] text-white transition-colors hover:bg-[#4f86ff]" href="/CV_Bastien_Autem_portfolio_EN.pdf" download="CV-Bastien-Autem-Portfolio-EN.pdf">
                 Download PDF <span className="ml-2" aria-hidden="true">↓</span>
               </a>
               <a className="inline-flex min-h-11 items-center border border-white/25 px-5 py-3 text-xs font-extrabold uppercase tracking-[0.09em] transition-colors hover:border-[#4f86ff] hover:text-[#4f86ff]" href="mailto:deh2win@gmail.com">Contact me</a>
@@ -88,10 +88,10 @@ export default function EnglishResume() {
         <section className="mt-[clamp(64px,8vw,104px)]" aria-labelledby="resume-preview-title">
           <div className="mb-8 flex flex-wrap items-end justify-between gap-5">
             <div><p className="text-xs font-extrabold text-[#1557e8] uppercase tracking-[0.12em] dark:text-[#4f86ff]">Preview</p><h2 className="mt-4 text-[clamp(1.9rem,3vw,3rem)] leading-none font-black tracking-[-0.05em]" id="resume-preview-title">2026 English PDF</h2></div>
-            <a className="text-sm font-black text-[#1557e8] dark:text-[#4f86ff]" href="/CV_Bastien_Autem_2026_EN_v2.pdf" download="CV-Bastien-Autem-2026-EN.pdf">Download document <span aria-hidden="true">↓</span></a>
+            <a className="text-sm font-black text-[#1557e8] dark:text-[#4f86ff]" href="/CV_Bastien_Autem_portfolio_EN.pdf" download="CV-Bastien-Autem-Portfolio-EN.pdf">Download document <span aria-hidden="true">↓</span></a>
           </div>
           <figure>
-            <Image src="/CV_Bastien_Autem_2026_EN_v2.png" className="h-auto w-full border border-black/15 dark:border-white/15" alt="" height={2022} width={1429} sizes="(max-width: 1132px) calc(100vw - 32px), 1100px" />
+            <Image src="/CV_Bastien_Autem_portfolio_EN.png" className="h-auto w-full border border-black/15 dark:border-white/15" alt="" height={2022} width={1429} sizes="(max-width: 1132px) calc(100vw - 32px), 1100px" />
             <figcaption className="mt-4 text-sm leading-6 text-[#5c6059] dark:text-[#a9aea5]">Visual preview of the English résumé. Its main content is also available as accessible text above.</figcaption>
           </figure>
         </section>

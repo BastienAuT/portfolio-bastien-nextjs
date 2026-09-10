@@ -62,8 +62,8 @@ const Banner = ({ locale = "fr" }) => {
             </a>
             <a
               className="inline-flex min-h-11 items-center border border-[#111411]/20 px-5 py-3 text-sm font-extrabold text-[#111411] transition-colors hover:border-[#246bfe] hover:text-[#1557e8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#246bfe] dark:border-white/20 dark:text-white dark:hover:text-[#4f86ff]"
-              href={locale === "en" ? "/CV_Bastien_Autem_2026_EN_v2.pdf" : "/CV_Bastien_Autem_2026.pdf"}
-              download={locale === "en" ? "CV-Bastien-Autem-2026-EN.pdf" : "CV-Bastien-Autem-2026.pdf"}
+              href={locale === "en" ? "/CV_Bastien_Autem_portfolio_EN.pdf" : "/CV_Bastien_Autem_portfolio.pdf"}
+              download={locale === "en" ? "CV-Bastien-Autem-Portfolio-EN.pdf" : "CV-Bastien-Autem-Portfolio.pdf"}
             >
               {t.resume}
             </a>
