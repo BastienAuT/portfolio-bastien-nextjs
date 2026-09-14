@@ -39,10 +39,10 @@ const nextConfig = {
       ...[
         "/projects/:path*",
         "/videos/:path*",
-        "/CV_Bastien_Autem_2026.pdf",
-        "/CV_Bastien_Autem_2026.png",
-        "/CV_Bastien_Autem_2026_EN_v2.pdf",
-        "/CV_Bastien_Autem_2026_EN_v2.png",
+        "/CV_Bastien_Autem.pdf",
+        "/CV_Bastien_Autem.png",
+        "/CV_Bastien_Autem_EN.pdf",
+        "/CV_Bastien_Autem_EN.png",
         "/bastien1.jpg",
       ].map((source) => ({
         source,
