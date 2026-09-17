@@ -2,7 +2,7 @@ import { HomePage } from "../page";
 
 export const metadata = {
   title: { absolute: "Bastien Autem — AI-augmented full-stack developer" },
-  description: "Bastien Autem’s portfolio: a product-minded full-stack developer specializing in React, Next.js, and TypeScript.",
+  description: "Bastien Autem’s portfolio: an AI-augmented full-stack developer specializing in React, Next.js, and TypeScript.",
   alternates: {
     canonical: "/en",
     languages: { "fr-FR": "/", "en-US": "/en" },

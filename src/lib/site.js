@@ -1,7 +1,7 @@
 export const siteName = "Portfolio de Bastien Autem";
 
 export const siteDescription =
-  "Portfolio de Bastien Autem, développeur full-stack orienté produit, spécialisé en React, Next.js et TypeScript.";
+  "Portfolio de Bastien Autem, développeur full-stack augmenté par l'IA, spécialisé en React, Next.js et TypeScript.";
 
 const normalizeSiteUrl = (value) => {
   const candidate = value?.trim();

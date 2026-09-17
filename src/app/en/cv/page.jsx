@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Résumé",
-  description: "Résumé and professional overview of Bastien Autem, a product-minded full-stack developer specializing in React, Next.js, and TypeScript.",
+  description: "Résumé and professional overview of Bastien Autem, an AI-augmented full-stack developer specializing in React, Next.js, and TypeScript.",
   alternates: {
     canonical: "/en/cv",
     languages: { "fr-FR": "/cv", "en-US": "/en/cv" },
@@ -11,14 +11,14 @@ export const metadata = {
   openGraph: {
     locale: "en_US",
     title: "Résumé · Bastien Autem",
-    description: "Professional overview of Bastien Autem, product-minded full-stack developer.",
+    description: "Professional overview of Bastien Autem, AI-augmented full-stack developer.",
     url: "/en/cv",
     images: ["/opengraph-image"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Resume · Bastien Autem",
-    description: "Professional overview of Bastien Autem, product-minded full-stack developer.",
+    description: "Professional overview of Bastien Autem, AI-augmented full-stack developer.",
     images: ["/opengraph-image"],
   },
 };
@@ -39,7 +39,7 @@ export default function EnglishResume() {
             <p className="text-xs font-extrabold text-[#4f86ff] uppercase tracking-[0.12em]">Résumé</p>
             <h1 className="mt-5 max-w-[760px] font-[family-name:var(--font-space-grotesk)] text-[clamp(2.7rem,5.5vw,5.6rem)] leading-[0.9] font-semibold tracking-[-0.065em]">
               Bastien Autem
-              <span className="mt-3 block text-[.46em] leading-tight text-[#4f86ff] tracking-[-0.04em]">Product-minded full-stack developer</span>
+              <span className="mt-3 block text-[.46em] leading-tight text-[#4f86ff] tracking-[-0.04em]">AI-augmented full-stack developer</span>
             </h1>
           </div>
           <div>

@@ -96,7 +96,7 @@ const structuredData = {
       name: "Bastien Autem",
       url: siteUrl,
       image: `${siteUrl}/bastien1.jpg`,
-      jobTitle: "Développeur full-stack orienté produit",
+      jobTitle: "Développeur full-stack augmenté par l'IA",
       sameAs: [
         "https://github.com/BastienAuT",
         "https://www.linkedin.com/in/bastien-autem/",
@@ -132,7 +132,7 @@ export default async function RootLayout({ children }) {
       if (item["@type"] === "Person" && locale === "en") {
         return {
           ...item,
-          jobTitle: "Product-minded full-stack developer",
+          jobTitle: "AI-augmented full-stack developer",
           knowsAbout: item.knowsAbout.map((topic) =>
             topic === "API web" ? "Web APIs" : topic,
           ),
@@ -147,7 +147,7 @@ export default async function RootLayout({ children }) {
               url: `${siteUrl}/en`,
               name: "Bastien Autem’s Portfolio",
               description:
-                "Bastien Autem’s portfolio: a product-minded full-stack developer specializing in React, Next.js, and TypeScript.",
+                "Bastien Autem’s portfolio: an AI-augmented full-stack developer specializing in React, Next.js, and TypeScript.",
               inLanguage: "en-US",
             }
           : { ...item, inLanguage: "fr-FR" };

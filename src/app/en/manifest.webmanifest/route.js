@@ -2,7 +2,7 @@ const englishManifest = {
   name: "Bastien Autem’s Portfolio",
   short_name: "Bastien Autem",
   description:
-    "Bastien Autem’s portfolio: a product-minded full-stack developer specializing in React, Next.js, and TypeScript.",
+    "Bastien Autem’s portfolio: an AI-augmented full-stack developer specializing in React, Next.js, and TypeScript.",
   id: "/en",
   start_url: "/en",
   scope: "/en",
