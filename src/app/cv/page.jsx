@@ -12,7 +12,7 @@ export const metadata = {
   openGraph: {
     title: "CV · Bastien Autem",
     description:
-      "CV et repères professionnels de Bastien Autem, développeur full-stack orienté produit.",
+      "CV et repères professionnels de Bastien Autem, développeur augmenté par l'IA.",
     url: "/cv",
     images: ["/opengraph-image"],
   },
@@ -20,7 +20,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "CV · Bastien Autem",
     description:
-      "CV et repères professionnels de Bastien Autem, développeur full-stack orienté produit.",
+      "CV et repères professionnels de Bastien Autem, AI augmented full-stack developer.",
     images: ["/opengraph-image"],
   },
 };
