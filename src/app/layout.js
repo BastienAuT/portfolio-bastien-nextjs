@@ -38,7 +38,7 @@ export const metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: siteName,
   title: {
-    default: "Bastien Autem — Développeur full-stack orienté produit",
+    default: "Bastien Autem — Développeur full-stack augmenté par l'IA",
     template: "%s — Bastien Autem",
   },
   description: siteDescription,
@@ -58,12 +58,12 @@ export const metadata = {
     locale: "fr_FR",
     url: "./",
     siteName,
-    title: "Bastien Autem — Développeur full-stack orienté produit",
+    title: "Bastien Autem — Développeur full-stack augmenté par l'IA",
     description: siteDescription,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bastien Autem — Développeur full-stack orienté produit",
+    title: "Bastien Autem — Développeur full-stack augmenté par l'IA",
     description: siteDescription,
   },
   robots: {
