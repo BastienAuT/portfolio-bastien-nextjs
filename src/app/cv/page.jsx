@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata = {
   title: "CV",
   description:
-    "CV et repères professionnels de Bastien Autem, développeur full-stack augmenté par l'IA spécialisé en React, Next.js et TypeScript.",
+    "CV et repères professionnels de Bastien Autem, développeur front-end spécialisé en React, Next.js et TypeScript.",
   alternates: {
     canonical: "/cv",
     languages: { "fr-FR": "/cv", "en-US": "/en/cv" },
@@ -12,7 +12,7 @@ export const metadata = {
   openGraph: {
     title: "CV · Bastien Autem",
     description:
-      "CV et repères professionnels de Bastien Autem, développeur full-stack augmenté par l'IA.",
+      "CV et repères professionnels de Bastien Autem, développeur front-end.",
     url: "/cv",
     images: ["/opengraph-image"],
   },
@@ -20,7 +20,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "CV · Bastien Autem",
     description:
-      "CV et repères professionnels de Bastien Autem, développeur full-stack augmenté par l'IA.",
+      "CV et repères professionnels de Bastien Autem, développeur front-end.",
     images: ["/opengraph-image"],
   },
 };
@@ -44,15 +44,16 @@ const Cv = () => {
             <h1 className="mt-5 max-w-[760px] font-[family-name:var(--font-space-grotesk)] text-[clamp(2.7rem,5.5vw,5.6rem)] leading-[0.9] font-semibold tracking-[-0.065em]">
               Bastien Autem
               <span className="mt-3 block text-[.46em] leading-tight text-[#4f86ff] tracking-[-0.04em]">
-                Développeur full-stack augmenté par l&apos;IA
+                Développeur front-end
               </span>
             </h1>
           </div>
 
           <div>
             <p className="leading-7 text-[#c9cec5]">
-              Je conçois des applications web de bout en bout avec React,
-              Next.js et TypeScript, de l’interface aux API et aux données.
+              Je développe des interfaces, des API et des projets personnels
+              complets avec React, Next.js et TypeScript, avec une expérience
+              sur une application métier en production.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <a
@@ -129,10 +130,11 @@ const Cv = () => {
                   Projets personnels récents
                 </h3>
                 <p className="mt-4 leading-7 text-[#5c6059] dark:text-[#a9aea5]">
-                  Cyclone explore la communication temps réel, VortX les
-                  interactions d’un réseau social et Lyreah une chaîne de lecture
-                  EPUB sécurisée. Leurs démos, dépôts et études de cas sont
-                  accessibles depuis les projets sélectionnés.
+                  Cyclone réunit messagerie temps réel, appels audio/vidéo et
+                  partage d’écran. Axion couvre la gestion d’interventions :
+                  planning, rapports signés et facturation, avec des parcours
+                  responsable, technicien et client. Leurs démos, dépôts et
+                  études de cas sont accessibles depuis les projets sélectionnés.
                 </p>
                 <Link
                   className="mt-4 inline-flex text-sm font-black text-[#1557e8] transition-colors hover:text-[#111411] dark:text-[#4f86ff] dark:hover:text-white"

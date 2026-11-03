@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Résumé",
-  description: "Résumé and professional overview of Bastien Autem, an AI-augmented full-stack developer specializing in React, Next.js, and TypeScript.",
+  description: "Résumé and professional overview of Bastien Autem, a front-end developer specializing in React, Next.js, and TypeScript.",
   alternates: {
     canonical: "/en/cv",
     languages: { "fr-FR": "/cv", "en-US": "/en/cv" },
@@ -11,14 +11,14 @@ export const metadata = {
   openGraph: {
     locale: "en_US",
     title: "Résumé · Bastien Autem",
-    description: "Professional overview of Bastien Autem, AI-augmented full-stack developer.",
+    description: "Professional overview of Bastien Autem, Front-end developer.",
     url: "/en/cv",
     images: ["/opengraph-image"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Resume · Bastien Autem",
-    description: "Professional overview of Bastien Autem, AI-augmented full-stack developer.",
+    description: "Professional overview of Bastien Autem, Front-end developer.",
     images: ["/opengraph-image"],
   },
 };
@@ -39,11 +39,11 @@ export default function EnglishResume() {
             <p className="text-xs font-extrabold text-[#4f86ff] uppercase tracking-[0.12em]">Résumé</p>
             <h1 className="mt-5 max-w-[760px] font-[family-name:var(--font-space-grotesk)] text-[clamp(2.7rem,5.5vw,5.6rem)] leading-[0.9] font-semibold tracking-[-0.065em]">
               Bastien Autem
-              <span className="mt-3 block text-[.46em] leading-tight text-[#4f86ff] tracking-[-0.04em]">AI-augmented full-stack developer</span>
+              <span className="mt-3 block text-[.46em] leading-tight text-[#4f86ff] tracking-[-0.04em]">Front-end developer</span>
             </h1>
           </div>
           <div>
-            <p className="leading-7 text-[#c9cec5]">I design and build web applications end to end with React, Next.js, and TypeScript, from interfaces to APIs and data.</p>
+            <p className="leading-7 text-[#c9cec5]">I build interfaces, APIs, and personal projects with React, Next.js, and TypeScript, with experience on a business application in production.</p>
             <div className="mt-7 flex flex-wrap gap-3">
               <a className="inline-flex min-h-11 items-center bg-[#246bfe] px-5 py-3 text-xs font-extrabold uppercase tracking-[0.09em] text-white transition-colors hover:bg-[#4f86ff]" href="/CV_Bastien_Autem_EN.pdf" download="CV_Bastien_Autem_EN.pdf">
                 Download PDF <span className="ml-2" aria-hidden="true">↓</span>
@@ -74,7 +74,7 @@ export default function EnglishResume() {
               </article>
               <article className="border-b border-[#111411]/20 py-7 dark:border-white/20">
                 <h3 className="text-sm font-black uppercase tracking-[0.08em]">Recent personal projects</h3>
-                <p className="mt-4 leading-7 text-[#5c6059] dark:text-[#a9aea5]">Cyclone explores real-time communication, VortX the interactions of a social network, and Lyreah a secure EPUB reading pipeline. Their demos, repositories, and case studies are available in the selected projects.</p>
+                <p className="mt-4 leading-7 text-[#5c6059] dark:text-[#a9aea5]">Cyclone brings together real-time messaging, audio/video calls, and screen sharing. Axion covers field service scheduling, signed reports, and invoicing, with manager, technician, and client workflows. Their demos, repositories, and case studies are available in the selected projects.</p>
                 <Link className="mt-4 inline-flex text-sm font-black text-[#1557e8] dark:text-[#4f86ff]" href="/en#projets-selectionnes">View projects <span className="ml-2" aria-hidden="true">→</span></Link>
               </article>
               <article className="py-7">
