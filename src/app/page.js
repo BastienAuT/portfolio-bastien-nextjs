@@ -6,7 +6,7 @@ import Testimonial from "../components/testimonial/Testimonial";
 const copy = {
   fr: {
     landmarksAria: "Repères sur le portfolio", landmarks: ["Full-stack, de bout en bout", "Produit · UI · API · Données · Tests", "Applications livrées en production"],
-    experience: "Expérience professionnelle", responsibilities: "Produits et responsabilités", months6: "6 mois", hoffmannRole: "Développeur web full-stack", production: "Application métier en production",
+    experience: "Expérience professionnelle", responsibilities: "Produits et responsabilités", months6: "6 mois", hoffmannDates: "octobre 2023 – avril 2024", preperaDates: "février 2022", hoffmannRole: "Développeur web full-stack", production: "Application métier en production",
     hoffmann: "J’ai fait évoluer une application de devis aéronautiques utilisée en production. J’ai créé de nouveaux modules et adapté les parcours aux réponses des utilisateurs. J’ai aussi intégré depuis Contentful les données des avions, comme le prix des places, le carburant ou les repas, puis automatisé avec Mailgun l’envoi des devis, les confirmations de réception et les relances lorsqu’une information manquait.",
     concretely: "Concrètement :", hoffmannResult: "j’ai ajouté les fonctionnalités qui manquaient à l’application en veillant à ce qu’elles s’intègrent naturellement aux parcours et à l’interface existants. Le traitement des devis a aussi gagné en automatisation, avec des données centralisées et moins d’échanges manuels.",
     month1: "1 mois", preperaRole: "Développeur JavaScript & Bubble", prepera: "Première expérience sur un projet no-code avec Bubble. J’ai participé à la création des pages et des parcours, ainsi qu’à la mise en place de plugins pour répondre à certains besoins spécifiques de l’application.", preperaResult: "mise en place de logiques métier, de quelques algorithmes et de plugins adaptés aux besoins du projet.",
@@ -14,7 +14,7 @@ const copy = {
   },
   en: {
     landmarksAria: "Portfolio highlights", landmarks: ["Full-stack, end to end", "Product · UI · API · Data · Tests", "Applications shipped to production"],
-    experience: "Professional experience", responsibilities: "Products and responsibilities", months6: "6 months", hoffmannRole: "Full-stack web developer", production: "Business application in production",
+    experience: "Professional experience", responsibilities: "Products and responsibilities", months6: "6 months", hoffmannDates: "October 2023 – April 2024", preperaDates: "February 2022", hoffmannRole: "Full-stack web developer", production: "Business application in production",
     hoffmann: "I developed an aviation quoting application used in production. I built new modules and adapted user journeys based on feedback. I also integrated aircraft data from Contentful, including seat pricing, fuel, and meals, then used Mailgun to automate quote delivery, receipt confirmations, and follow-ups when information was missing.",
     concretely: "In practice:", hoffmannResult: "I added missing features while ensuring they fitted naturally into the existing journeys and interface. Quote processing also became more automated, with centralized data and fewer manual exchanges.",
     month1: "1 month", preperaRole: "JavaScript & Bubble developer", prepera: "My first experience on a no-code project using Bubble. I helped create pages and user journeys and set up plugins to meet specific application requirements.", preperaResult: "implementation of business logic, several algorithms, and plugins tailored to the project’s needs.",
@@ -78,6 +78,9 @@ export function HomePage({ locale = "fr" }) {
                 <p className="mt-1 text-sm text-[#5c6059] dark:text-[#a9aea5]">
                   {t.hoffmannRole}
                 </p>
+                <p className="mt-2 text-sm text-[#5c6059] dark:text-[#a9aea5]">
+                  {t.hoffmannDates}
+                </p>
                 <p className="mt-4 inline-flex border border-[#111411]/20 px-3 py-2 text-[11px] font-extrabold text-[#1557e8] uppercase tracking-[0.1em] dark:border-white/20 dark:text-[#4f86ff]">
                   {t.production}
                 </p>
@@ -105,6 +108,9 @@ export function HomePage({ locale = "fr" }) {
                 </div>
                 <p className="mt-1 text-sm text-[#5c6059] dark:text-[#a9aea5]">
                   {t.preperaRole}
+                </p>
+                <p className="mt-2 text-sm text-[#5c6059] dark:text-[#a9aea5]">
+                  {t.preperaDates}
                 </p>
               </div>
               <div className="max-w-[690px] text-[#5c6059] dark:text-[#a9aea5]">
