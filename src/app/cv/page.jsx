@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import cvPreview from "../../../public/CV_Bastien_Autem.png";
 
 export const metadata = {
   title: "CV",
   description:
-    "CV et repères professionnels de Bastien Autem, développeur front-end spécialisé en React, Next.js et TypeScript.",
+    "CV et repères professionnels de Bastien Autem, développeur web full-stack spécialisé en React, Next.js et TypeScript.",
   alternates: {
     canonical: "/cv",
     languages: { "fr-FR": "/cv", "en-US": "/en/cv" },
@@ -12,7 +13,7 @@ export const metadata = {
   openGraph: {
     title: "CV · Bastien Autem",
     description:
-      "CV et repères professionnels de Bastien Autem, développeur front-end.",
+      "CV et repères professionnels de Bastien Autem, développeur web full-stack.",
     url: "/cv",
     images: ["/opengraph-image"],
   },
@@ -20,7 +21,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "CV · Bastien Autem",
     description:
-      "CV et repères professionnels de Bastien Autem, développeur front-end.",
+      "CV et repères professionnels de Bastien Autem, développeur web full-stack.",
     images: ["/opengraph-image"],
   },
 };
@@ -44,7 +45,7 @@ const Cv = () => {
             <h1 className="mt-5 max-w-[760px] font-[family-name:var(--font-space-grotesk)] text-[clamp(2.7rem,5.5vw,5.6rem)] leading-[0.9] font-semibold tracking-[-0.065em]">
               Bastien Autem
               <span className="mt-3 block text-[.46em] leading-tight text-[#4f86ff] tracking-[-0.04em]">
-                Développeur front-end
+                Développeur web full-stack
               </span>
             </h1>
           </div>
@@ -53,7 +54,8 @@ const Cv = () => {
             <p className="leading-7 text-[#c9cec5]">
               Je développe des interfaces, des API et des projets personnels
               complets avec React, Next.js et TypeScript, avec une expérience
-              sur une application métier en production.
+              sur une application métier en production. J’intègre l’IA à mon
+              processus de développement.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <a
@@ -188,7 +190,7 @@ const Cv = () => {
 
           <figure>
             <Image
-              src="/CV_Bastien_Autem.png"
+              src={cvPreview}
               className="h-auto w-full border border-black/15 dark:border-white/15"
               alt=""
               height={2021}

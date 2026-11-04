@@ -2,10 +2,10 @@ import Image from "next/image";
 
 const copy = {
   fr: {
-    eyebrow: "Bastien Autem · Développeur full-stack augmenté par l'IA",
+    eyebrow: "Bastien Autem · Développeur web full-stack",
     headline: "Je transforme des problématiques produit complexes",
     emphasis: "en applications web claires.",
-    intro: "Je conçois et développe des produits web de bout en bout, de l’interface aux API et aux données, avec React, Next.js et TypeScript.",
+    intro: "Je conçois et développe des produits web de bout en bout, de l’interface aux API et aux données, avec React, Next.js et TypeScript, en intégrant l’IA à mon processus de développement.",
     work: "Voir mes réalisations",
     resume: "Télécharger mon CV",
     contact: "Me contacter",
@@ -16,10 +16,10 @@ const copy = {
     availability: "Ouvert aux opportunités",
   },
   en: {
-    eyebrow: "Bastien Autem · AI-augmented full-stack developer",
+    eyebrow: "Bastien Autem · Full-stack web developer",
     headline: "I turn complex product challenges",
     emphasis: "into clear web applications.",
-    intro: "I design and build web products end to end, from interfaces to APIs and data, using React, Next.js, and TypeScript.",
+    intro: "I design and build web products end to end, from interfaces to APIs and data, using React, Next.js, and TypeScript, with AI integrated into my development workflow.",
     work: "View my work",
     resume: "Download my résumé",
     contact: "Contact me",

@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import cvPreview from "../../../../public/CV_Bastien_Autem_EN.png";
 
 export const metadata = {
   title: "Résumé",
-  description: "Résumé and professional overview of Bastien Autem, a front-end developer specializing in React, Next.js, and TypeScript.",
+  description: "Résumé and professional overview of Bastien Autem, a full-stack web developer specializing in React, Next.js, and TypeScript.",
   alternates: {
     canonical: "/en/cv",
     languages: { "fr-FR": "/cv", "en-US": "/en/cv" },
@@ -11,14 +12,14 @@ export const metadata = {
   openGraph: {
     locale: "en_US",
     title: "Résumé · Bastien Autem",
-    description: "Professional overview of Bastien Autem, Front-end developer.",
+    description: "Professional overview of Bastien Autem, Full-stack web developer.",
     url: "/en/cv",
     images: ["/opengraph-image"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Resume · Bastien Autem",
-    description: "Professional overview of Bastien Autem, Front-end developer.",
+    description: "Professional overview of Bastien Autem, Full-stack web developer.",
     images: ["/opengraph-image"],
   },
 };
@@ -39,11 +40,11 @@ export default function EnglishResume() {
             <p className="text-xs font-extrabold text-[#4f86ff] uppercase tracking-[0.12em]">Résumé</p>
             <h1 className="mt-5 max-w-[760px] font-[family-name:var(--font-space-grotesk)] text-[clamp(2.7rem,5.5vw,5.6rem)] leading-[0.9] font-semibold tracking-[-0.065em]">
               Bastien Autem
-              <span className="mt-3 block text-[.46em] leading-tight text-[#4f86ff] tracking-[-0.04em]">Front-end developer</span>
+              <span className="mt-3 block text-[.46em] leading-tight text-[#4f86ff] tracking-[-0.04em]">Full-stack web developer</span>
             </h1>
           </div>
           <div>
-            <p className="leading-7 text-[#c9cec5]">I build interfaces, APIs, and personal projects with React, Next.js, and TypeScript, with experience on a business application in production.</p>
+            <p className="leading-7 text-[#c9cec5]">I build interfaces, APIs, and personal projects with React, Next.js, and TypeScript, with experience on a business application in production. I integrate AI into my development workflow.</p>
             <div className="mt-7 flex flex-wrap gap-3">
               <a className="inline-flex min-h-11 items-center bg-[#246bfe] px-5 py-3 text-xs font-extrabold uppercase tracking-[0.09em] text-white transition-colors hover:bg-[#4f86ff]" href="/CV_Bastien_Autem_EN.pdf" download="CV_Bastien_Autem_EN.pdf">
                 Download PDF <span className="ml-2" aria-hidden="true">↓</span>
@@ -91,7 +92,7 @@ export default function EnglishResume() {
             <a className="text-sm font-black text-[#1557e8] dark:text-[#4f86ff]" href="/CV_Bastien_Autem_EN.pdf" download="CV_Bastien_Autem_EN.pdf">Download document <span aria-hidden="true">↓</span></a>
           </div>
           <figure>
-            <Image src="/CV_Bastien_Autem_EN.png" className="h-auto w-full border border-black/15 dark:border-white/15" alt="" height={2021} width={1429} sizes="(max-width: 1132px) calc(100vw - 32px), 1100px" />
+            <Image src={cvPreview} className="h-auto w-full border border-black/15 dark:border-white/15" alt="" height={2021} width={1429} sizes="(max-width: 1132px) calc(100vw - 32px), 1100px" />
             <figcaption className="mt-4 text-sm leading-6 text-[#5c6059] dark:text-[#a9aea5]">Visual preview of the English résumé. Its main content is also available as accessible text above.</figcaption>
           </figure>
         </section>

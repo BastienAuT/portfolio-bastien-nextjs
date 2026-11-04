@@ -38,7 +38,7 @@ export const metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: siteName,
   title: {
-    default: "Bastien Autem — Développeur full-stack augmenté par l'IA",
+    default: "Bastien Autem — Développeur web full-stack",
     template: "%s — Bastien Autem",
   },
   description: siteDescription,
@@ -58,12 +58,12 @@ export const metadata = {
     locale: "fr_FR",
     url: "./",
     siteName,
-    title: "Bastien Autem — Développeur full-stack augmenté par l'IA",
+    title: "Bastien Autem — Développeur web full-stack",
     description: siteDescription,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bastien Autem — Développeur full-stack augmenté par l'IA",
+    title: "Bastien Autem — Développeur web full-stack",
     description: siteDescription,
   },
   robots: {
@@ -96,7 +96,7 @@ const structuredData = {
       name: "Bastien Autem",
       url: siteUrl,
       image: `${siteUrl}/bastien1.jpg`,
-      jobTitle: "Développeur full-stack augmenté par l'IA",
+      jobTitle: "Développeur web full-stack",
       sameAs: [
         "https://github.com/BastienAuT",
         "https://www.linkedin.com/in/bastien-autem/",
@@ -132,7 +132,7 @@ export default async function RootLayout({ children }) {
       if (item["@type"] === "Person" && locale === "en") {
         return {
           ...item,
-          jobTitle: "AI-augmented full-stack developer",
+          jobTitle: "Full-stack web developer",
           knowsAbout: item.knowsAbout.map((topic) =>
             topic === "API web" ? "Web APIs" : topic,
           ),
@@ -147,7 +147,7 @@ export default async function RootLayout({ children }) {
               url: `${siteUrl}/en`,
               name: "Bastien Autem’s Portfolio",
               description:
-                "Bastien Autem’s portfolio: an AI-augmented full-stack developer specializing in React, Next.js, and TypeScript.",
+                "Bastien Autem’s portfolio: a full-stack web developer specializing in React, Next.js, and TypeScript.",
               inLanguage: "en-US",
             }
           : { ...item, inLanguage: "fr-FR" };

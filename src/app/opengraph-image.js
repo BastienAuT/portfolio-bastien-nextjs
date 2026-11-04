@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "Portfolio de Bastien Autem, développeur full-stack augmenté par l'IA";
+  "Portfolio de Bastien Autem, développeur web full-stack";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -63,7 +63,7 @@ export default function OpenGraphImage() {
                 maxWidth: "940px",
               }}
             >
-              Développeur full-stack augmenté par l&apos;IA
+              Développeur web full-stack
             </div>
             <div
               style={{
